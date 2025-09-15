@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, Github, ExternalLink, Calendar, Code } from 'lucide-react'
+import { ArrowLeft, Github, ExternalLink, Code } from 'lucide-react'
 import { getProjectBySlug, projects } from '@/lib/projects'
 
 interface ProjectPageProps {
