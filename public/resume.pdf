@@ -1,0 +1,93 @@
+%PDF-1.4
+1 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+
+2 0 obj
+<<
+/Type /Pages
+/Kids [3 0 R]
+/Count 1
+>>
+endobj
+
+3 0 obj
+<<
+/Type /Page
+/Parent 2 0 R
+/MediaBox [0 0 612 792]
+/Resources <<
+/Font <<
+/F1 4 0 R
+>>
+>>
+/Contents 5 0 R
+>>
+endobj
+
+4 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+
+5 0 obj
+<<
+/Length 400
+>>
+stream
+BT
+/F1 24 Tf
+50 720 Td
+(Dismas Muriuki) Tj
+0 -30 Td
+/F1 14 Tf
+(Backend Developer & Database Enthusiast) Tj
+0 -40 Td
+/F1 12 Tf
+(Email: muriukidismas9@gmail.com) Tj
+0 -20 Td
+(Phone: +254 745 893 448) Tj
+0 -20 Td
+(GitHub: https://github.com/danny-dis) Tj
+0 -20 Td
+(Location: Meru County, Kenya) Tj
+0 -40 Td
+/F1 16 Tf
+(PLACEHOLDER RESUME) Tj
+0 -30 Td
+/F1 12 Tf
+(This is a placeholder resume file.) Tj
+0 -20 Td
+(Please replace this file with your actual resume PDF.) Tj
+0 -40 Td
+(Skills: MySQL, Linux/Systems, Node.js, React, Python, Rust) Tj
+0 -20 Td
+(Focus: Decentralized systems, P2P networks, Blockchain) Tj
+0 -20 Td
+(Philosophy: FOSS advocate, modular architecture, self-hosting) Tj
+ET
+endstream
+endobj
+
+xref
+0 6
+0000000000 65535 f 
+0000000010 00000 n 
+0000000053 00000 n 
+0000000110 00000 n 
+0000000251 00000 n 
+0000000320 00000 n 
+trailer
+<<
+/Size 6
+/Root 1 0 R
+>>
+startxref
+772
+%%EOF
