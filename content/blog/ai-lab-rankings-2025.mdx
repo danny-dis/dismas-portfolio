@@ -1,0 +1,374 @@
+---
+title: "The AI Lab Rankings September 2025: Every Model From Every Lab, Ranked"
+description: "GPT-6 Astra, Claude Fable 5.1, Grok 4.6, Qwen3.8 Max, DeepSeek V4, Mistral Medium 3.5, Kimi K3 — all the models, all the benchmarks, and the labs actually winning."
+date: "2025-09-05"
+readTime: "10 min read"
+---
+
+# The AI Lab Rankings September 2025: Every Model From Every Lab, Ranked
+
+**September 2025 was the biggest month in AI history. Two frontier flagships, a dozen near-frontier challengers, and the gap between "best" and "best value" has never been wider.**
+
+Here's every significant model from every major lab, ranked by capability, pricing, and real-world usage.
+
+---
+
+## Tier 1: The Frontier (The Best Period)
+
+These are the most capable models ever built. Full stop.
+
+### 1. GPT-6 Astra (OpenAI) — September 4, 2026
+
+**The reasoning king.**
+
+| Benchmark | Score |
+|-----------|-------|
+| ARC-AGI-3 (OpenAI harness) | 99.9% |
+| ARC-AGI-3 (standard harness) | 62.7% |
+| FrontierMath Tier 4 | 97.6% |
+| ExploitBench | 100% |
+| SRE-Bench (single attempt) | 88.0% |
+| OSWorld 2.0 | 72.6% |
+| Terminal-Bench-Science | 64.6% |
+| Epoch ECI (overall) | 169 |
+
+**Pricing:** $10 input / $50 output per million tokens
+**Fast mode:** $20/$100 per million tokens (2.5x speed)
+**Astra Pro:** Higher limits for Pro/Business/Enterprise
+
+**Strengths:**
+- Abstract reasoning and novel problem-solving (ARC-AGI-3)
+- Binary reverse engineering (SRE-Bench)
+- Mathematical proof verification (FrontierMath)
+- Alignment: 0% unauthorized target exceedance (vs 48% for Sol)
+
+**Weaknesses:**
+- 2.5x price increase over predecessor
+- Over-engineering bias (returns massive PRs for small fixes)
+- Token burn from over-research on vague tasks
+- Gives up earlier than competitors
+
+**The verdict:** If you're solving problems in unfamiliar domains, Astra is worth the premium. For everything else, it's overpriced.
+
+---
+
+### 2. Claude Fable 5.1 + Mythos 5.1 (Anthropic) — September 1, 2026
+
+**The coding and knowledge work champion.**
+
+Fable 5.1 and Mythos 5.1 are the **same model with different safeguards**. Mythos removes cybersecurity and biology restrictions for vetted organizations.
+
+| Benchmark | Fable 5.1 | Mythos 5.1 |
+|-----------|-----------|------------|
+| Terminal-Bench-Science 0.1 | 52.6% | — |
+| Terminal-Bench 4.0 | 55.8% | 60.9% |
+| OSWorld 2.0 (partial) | 77.9% | — |
+| Humanity's Last Exam (no tools) | 60.9% | — |
+| AutomationBench | 31.4% | — |
+| Coding Agent Index | 70 | — |
+| Artificial Analysis Intelligence Index | 66 | — |
+
+**Pricing:** $10/$50 per million tokens
+**Cache reads:** $0.25 per million (75% discount)
+
+**Strengths:**
+- Best-in-class coding agent (Coding Agent Index: 70)
+- 75% cache discount for long sessions
+- Improved prose style over Fable 5
+- Vulnerability discovery now allowed (Fable 5 blocks it)
+
+**Weaknesses:**
+- 1.7x more output tokens than Fable 5 (offsets cache savings)
+- Burns through session quotas fast (~20 min for 5-hour quota)
+- Data retention (30-day) blocks regulated industries
+- Hallucination regression (attempts answers more often when wrong)
+
+**The verdict:** For long-running coding sessions with heavy context reuse, Fable 5.1's cache pricing wins. For raw capability, Astra edges it out.
+
+---
+
+## Tier 2: Near-Frontier (95% of the capability, 20% of the price)
+
+### 3. Claude Mythos 5.1 (Anthropic) — Restricted
+
+Same model as Fable 5.1, fewer safeguards. **Strongest cyber capabilities Anthropic has released.**
+
+Available only through Project Glasswing, Cyber Verification Program (US-only), and Life Sciences Verification Program.
+
+**Cyber benchmarks (safeguards off):**
+- Meets or exceeds Mythos 5 across ExploitBench, OSS-Fuzz, Firefox 147, ExploitGym
+- Still below CB-2 threshold (per Anthropic; critics disagree)
+
+---
+
+### 4. GPT-6 Astra Pro (OpenAI)
+
+Same model as Astra, higher message limits, priority access. For Pro ($100/$200), Business, and Enterprise.
+
+---
+
+### 5. Grok 4.6 (xAI / SpaceXAI) — August 12, 2026
+
+**The agentic workhorse.**
+
+| Benchmark | Grok 4.6 | Grok 4.5 |
+|-----------|----------|----------|
+| AA Intelligence Index | 61 | 56 |
+| GDPval-AA v2 | 1753 | 1526 |
+| DeepSWE 1.1 | 65.9% | 54% |
+| FrontierCode v1.1 | 61.3% | 56.6% |
+| APEX-Agents | 57.5% | 47.1% |
+| Terminal-Bench 3.0 | 26% | 15.7% |
+
+**Pricing:** $2/$6 per million tokens (under 200K context)
+**Context:** 500K tokens
+
+**Strengths:**
+- Best-in-class GDPval-AA v2 (economically valuable knowledge work)
+- Long-running AI agents (500K context)
+- $2/$6 pricing undercuts Astra/Fable 5.1 by 5x
+
+**Weaknesses:**
+- Not quite frontier-level on hardest benchmarks
+- xAI's safety track record raises enterprise concerns
+- Less community tooling than OpenAI/Anthropic
+
+**The verdict:** If you're building agentic workflows on a budget, Grok 4.6 is the best value in Tier 2.
+
+---
+
+### 6. Qwen3.8-Max (Alibaba) — August 3, 2026
+
+**The multimodal agent specialist.**
+
+2.4T parameters (95B active), 1M context, Apache 2.0 (weights releasing soon).
+
+| Benchmark | Score |
+|-----------|-------|
+| PaperBench | 93.0% |
+| Terminal-Bench 2.1 | 86.6% |
+| OSWorld-Verified | 86.1% |
+| SWE-Bench Pro | 67.7% |
+| GPQA Diamond | 92.6% |
+| JobBench | 53.4% |
+
+**Pricing:** $2/$6 per million tokens
+
+**Strengths:**
+- PaperBench (research reproduction) leader
+- Computer-use agents (OSWorld)
+- Multimodal breadth (MathVision, BabyVision, LogicVista)
+- Apache 2.0 open weights (eventually)
+
+**Weaknesses:**
+- Trails Fable 5.1 on SWE-Bench Pro by 12 points
+- HLE (broad knowledge) is last among flagships (43.6%)
+- All benchmarks vendor-run (awaiting independent verification)
+
+**The verdict:** If you need multimodal agents and open weights, Qwen3.8-Max is the future. For pure coding today, Fable 5.1 is stronger.
+
+---
+
+### 7. DeepSeek V4 Pro (DeepSeek) — April 24, 2026
+
+**The value frontier.**
+
+1.6T parameters (49B active), 1M context, MIT license.
+
+| Benchmark | Score |
+|-----------|-------|
+| SWE-Bench Verified | 80.6% |
+| GPQA Diamond | 90.1% |
+| LiveCodeBench | 93.5% |
+| Codeforces | 3206 |
+| HLE (with tools) | 60.0% |
+
+**Pricing:** $1.74 input / $3.48 output per million tokens
+
+**Strengths:**
+- LiveCodeBench leader (93.5%)
+- Near-frontier coding at 1/3 the price of Claude/OpenAI
+- MIT license (truly open)
+- Hybrid attention cuts KV cache to 10% of V3
+
+**Weaknesses:**
+- Trails frontier on knowledge/reasoning
+- 3-6 months behind GPT-5.5/Gemini 3.1 Pro (per DeepSeek's own admission)
+- No vulnerability discovery or cyber specialization
+
+**The verdict:** DeepSeek V4 Pro is the best open-weight model and the best value for production coding workloads. If you can live without frontier reasoning, this is your default.
+
+---
+
+### 8. DeepSeek V4 Flash (DeepSeek)
+
+The efficient sibling: 284B total (13B active), same 1M context, MIT license.
+
+| Benchmark | Score |
+|-----------|-------|
+| SWE-Bench Verified | 79.0% |
+| LiveCodeBench | 91.6% |
+| Terminal-Bench 2.1 | 82.7% |
+| HLE (with tools) | 51.5% |
+
+**Pricing:** $0.28/$0.28 per million tokens
+
+**The verdict:** At $0.28/M, this is the best value in AI. 80% of frontier capability at 1/10th the price.
+
+---
+
+### 9. Kimi K3 (Moonshot AI) — July 16, 2026
+
+**The open-weight contender.**
+
+2.8T parameters, 1M context, native vision, planned open-source release.
+
+| Benchmark | Score |
+|-----------|-------|
+| Terminal-Bench 2.1 | 88.3% |
+| DeepSWE 1.1 | 67.5% |
+| AutomationBench | 30.8% |
+| BrowseComp | 91.2% |
+
+**The verdict:** Competitive with Fable 5 on some benchmarks, but lacks independent verification. One to watch.
+
+---
+
+## Tier 3: Strong (80% of frontier, 10% of the price)
+
+### 10. Mistral Medium 3.5 (Mistral AI) — April 29, 2026
+
+128B dense, 256K context, open weights (modified MIT), $1.50/$7.50 per million tokens.
+
+| Benchmark | Score |
+|-----------|-------|
+| SWE-Bench Verified | 77.6% |
+| τ³-Telecom | 91.4% |
+
+**The verdict:** Best open-weight European model. Ships with Vibe (cloud coding agent that opens PRs). Solid but not frontier.
+
+---
+
+### 11. Mistral Small 4 (Mistral AI) — March 16, 2026
+
+119B MoE (~6B active), 256K context, $0.262 per million tokens (blended).
+
+Merges Magistral (reasoning), Pixtral (vision), Devstral (coding) into one model.
+
+**The verdict:** Best value from a European lab. Great for edge deployment.
+
+---
+
+### 12. GLM 5.3 (Zhipu AI) — August 14, 2026
+
+| Benchmark | Score |
+|-----------|-------|
+| LLM Stats Score | 54.2 |
+| Terminal-Bench 2.1 | 88.2% |
+| CyberGym | 84.5% |
+| FrontierSWE | 78.1% |
+
+**Pricing:** ~$0.30/$0.90 per million tokens
+
+**The verdict:** Strong Chinese model, but trails frontier on hardest benchmarks.
+
+---
+
+### 13. Tencent Hy4 Preview (Tencent) — August 28, 2026
+
+770B MoE (49B active), 1M context, Apache 2.0.
+
+**Blind evaluation results (163 experts, 203 tasks):**
+- vs GLM 5.3: 46.8% wins, 12.8% ties, 40.4% losses
+- vs Kimi K3: 51.2% wins, 7.9% ties, 40.9% losses
+
+**The verdict:** Strong real-world engineering performance, but narrow margins.
+
+---
+
+### 14. Qwen3.7-Plus (Alibaba) — June 1, 2026
+
+| Benchmark | Score |
+|-----------|-------|
+| HMMT Feb 2026 | 92.9% |
+| Arena Elo | 1455 |
+
+**Pricing:** $0.32/$1.28 per million tokens
+
+**The verdict:** 5x cheaper than Qwen3.8-Max, nearly as good. Best value in the Qwen lineup.
+
+---
+
+## Tier 4: Efficient/Specialized
+
+### 15. Ministral 3 14B (Mistral AI)
+
+14B dense, reasoning variant hits 85% AIME 2025. Best small reasoning model.
+
+### 16. NVIDIA Nemotron 3 Ultra (NVIDIA)
+
+550B MoE (55B active), 1M context, **FREE**. Multi-step reasoning and orchestration.
+
+### 17. MiniMax M3 (MiniMax)
+
+1M context, native multimodal, **FREE**. Best free multimodal model.
+
+### 18. Inception Mercury 2.5
+
+1,107 tokens/sec (diffusion LLM). Fastest reasoning model. $0.04/$0.15 per million.
+
+---
+
+## The Complete Ranking (LLM Stats Score / Artificial Analysis Index)
+
+| Rank | Model | Lab | Pricing | Best For |
+|------|-------|-----|---------|----------|
+| 1 | GPT-6 Astra | OpenAI | $10/$50 | Reasoning, math, novel problems |
+| 2 | Claude Fable 5.1 | Anthropic | $10/$50 | Coding agents, long sessions |
+| 3 | Claude Mythos 5.1 | Anthropic | Restricted | Cybersecurity, biology |
+| 4 | Qwen3.8-Max | Alibaba | $2/$6 | Multimodal agents, open weights |
+| 5 | Grok 4.6 | xAI | $2/$6 | Knowledge work, agents on budget |
+| 6 | DeepSeek V4 Pro | DeepSeek | $1.74/$3.48 | Best value frontier coding |
+| 7 | Kimi K3 | Moonshot | TBA | Open-weight coding |
+| 8 | Mistral Medium 3.5 | Mistral | $1.50/$7.50 | European open weights |
+| 9 | DeepSeek V4 Flash | DeepSeek | $0.28/$0.28 | Best value overall |
+| 10 | GLM 5.3 | Zhipu | ~$0.30/$0.90 | Budget coding |
+| 11 | Tencent Hy4 Preview | Tencent | TBA | Real-world engineering |
+| 12 | Qwen3.7-Plus | Alibaba | $0.32/$1.28 | Budget Qwen |
+
+---
+
+## Real-World Usage (OpenRouter Rankings)
+
+What developers actually use (weekly token volume):
+
+| Rank | Model | Tokens |
+|------|-------|--------|
+| 1 | Tencent Hy4 Preview | 13.6T |
+| 2 | Z.ai GLM 5.3 Flash | 12.3T |
+| 3 | DeepSeek V4 Flash 0731 | 11.9T |
+| 4 | OpenAI GPT-5.6 Luna | 11.3T |
+| 5 | MiniMax M3 (free) | 5.48T |
+| 6 | DeepSeek V4 Flash 0423 | 5.23T |
+
+**The market has spoken:** Chinese models and free models dominate actual usage. Frontier models are for the 1% of tasks that need them.
+
+---
+
+## The Verdict: Who's Actually Winning?
+
+**On raw capability:** OpenAI (Astra) and Anthropic (Fable 5.1/Mythos 5.1) are neck and neck. Astra wins on reasoning; Fable wins on coding agents.
+
+**On value:** DeepSeek is obliterating the competition. V4 Flash at $0.28/M delivers 80% of frontier capability.
+
+**On availability:** Chinese labs (Alibaba, Tencent, DeepSeek, Moonshot, Zhipu) are shipping faster, with fewer restrictions, at lower prices.
+
+**On real-world usage:** The market doesn't care about AGI hype. Developers use what's cheap, fast, and available.
+
+**The uncomfortable truth:** For 90% of use cases, GPT-6 Astra and Claude Fable 5.1 are overkill. DeepSeek V4 Flash or Qwen3.7-Plus handle the workload at a fraction of the cost.
+
+But for that last 10% — the truly novel, truly hard, truly unprecedented problems — Astra and Fable 5.1 are the only tools that work. And that's worth paying for.
+
+---
+
+*Data sourced from official benchmark publications, Artificial Analysis, Epoch AI, OpenRouter, LLM Stats, and independent researcher evaluations. Pricing as of September 5, 2026. Benchmark methodology varies across labs — treat vendor-run numbers as directional until independently verified.*
