@@ -229,40 +229,52 @@ export default function ProjectPage({ params }: ProjectPageProps) {
 
 function getProjectFeatures(projectId: string): string[] {
   const features: Record<string, string[]> = {
-    'decentralized-voting-system': [
-      'Blockchain-based vote recording for transparency and immutability',
-      'Cryptographic security ensuring vote integrity and voter privacy',
-      'Modular architecture for easy deployment across different institutions',
-      'Real-time result verification and audit trails',
-      'Scalable design supporting various voting scenarios'
+    'argus': [
+      '244+ Python files across 28 specialist agent folders',
+      'Committed exploitation loop: fingerprint → match CVE/PoC → develop → run → verify',
+      'Parallel fuzzing-to-exploit workshop across 6 engines',
+      'Operational severity model grading by demonstrated impact',
+      '8-phase MasterAgent lifecycle + AgentBus dispatch'
     ],
-    'beyond': [
-      'Core P2P network infrastructure with robust peer discovery',
-      'Modular architecture enabling easy integration with other systems',
-      'Self-hosting capabilities reducing dependency on centralized services',
-      'Resilient network topology that strengthens with more participants',
-      'Built-in security and privacy features'
+    'chimera': [
+      'Draft → Verify → Challenge → Synthesize pipeline',
+      'Cost-aware routing with configurable caps (per-task, per-session, per-day)',
+      'Agent Relay Racing: monitors context fill, triggers graceful handoff',
+      'Worktree isolation for parallel agent execution',
+      'DAG-based declarative workflow engine, VS Code chat panel, LSP intelligence'
     ],
-    'beyond-web': [
-      'Modern web interface for Beyond P2P network management',
-      'Real-time network monitoring and node status visualization',
-      'Intuitive controls for network configuration and peer management',
-      'Responsive design working across all device types',
-      'WebSocket integration for live network updates'
+    'dmr-x': [
+      'Single gateway for OpenAI, Anthropic, and Gemini wire formats',
+      'Routes to 57+ provider adapters with dynamic scoring',
+      'Thompson Sampling bandit for dynamic routing with fallback chains',
+      'Agent-as-a-Service runtime: durable sessions with resume/retry',
+      'MCP server with stdio/SSE/HTTP transports'
     ],
-    'vigilnet': [
-      'Multi-protocol support for onion, Loki, and I2P networks',
-      'Message hopping across Wi-Fi, cellular, Bluetooth, and radio',
-      'Future-ready architecture for mesh and satellite connectivity',
-      'Censorship-resistant design with multiple fallback routes',
-      'Privacy-first approach with end-to-end encryption'
+    'noesis': [
+      'Two-tier memory: agent-local + shared temporal knowledge graph',
+      'Content-addressed object store for immutable raw evidence',
+      'Trust-scoring and deduplication across raw agent transcripts',
+      'Python insight workers for chunking, embedding, extraction, graphification',
+      'MCP adapter serving scoped, cited Context Slices to agents'
     ],
-    'danny-dis-profile': [
-      'Collection of experimental projects and code snippets',
-      'Showcase of various technologies and development approaches',
-      'Open source contributions and community projects',
-      'Learning resources and development tutorials',
-      'Regular updates with new experiments and discoveries'
+    'votechain': [
+      'VotingFactory + Voting contracts (Solidity 0.8.24, OpenZeppelin v5, Foundry)',
+      'Multi-tenant: each organization gets isolated smart-contract elections',
+      'Privy embedded wallet + MetaMask support for voter authentication',
+      'Results indexing into Postgres with live SSE streaming to React frontend',
+      'Base L2 deployment for low gas costs'
+    ],
+    'ghost-factory': [
+      'Modular toolchain abstraction for multi-language, multi-platform builds',
+      'Targets C, C++, Rust, Go, Java, Python, Web',
+      'Supports Windows/Linux/macOS/Docker/ISO/firmware',
+      '"Ghost-ify" pipeline for automated repository transformation'
+    ],
+    'escrowbot': [
+      'Platform-agnostic core with adapters for Telegram, Slack, Discord',
+      '2-of-3 multisig + HTLC dispute resolution',
+      'Deterministic escrow — never controlled by the operator',
+      'Smart contract-enforced deposits, release, and refunds'
     ]
   }
 

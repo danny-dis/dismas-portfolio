@@ -1,0 +1,95 @@
+---
+title: "Claude Fable 5.1 and Mythos 5.1: Same Brain, Different Leash"
+description: "Anthropic's September 2025 release brings a 75% cache price cut, vulnerability discovery, and the most capable coding model they've ever shipped."
+date: "2025-09-05"
+readTime: "5 min read"
+---
+
+# Claude Fable 5.1 and Mythos 5.1: Same Brain, Different Leash
+
+**Anthropic released Fable 5.1 and Mythos 5.1 on September 1, 2026 — four days before GPT-6 Astra. The strategy is clear: one model, two products.**
+
+## The Architecture
+
+Fable 5.1 and Mythos 5.1 are **identical under the hood** — same weights, same capabilities. The difference is entirely in the safeguard layer:
+
+- **Claude Fable 5.1** — general availability, additional safeguards for cybersecurity and biology
+- **Claude Mythos 5.1** — restricted access, more permissive safeguards for vetted organizations
+
+Mythos 5.1 is available through:
+- **Project Glasswing** (Anthropic's trusted access program)
+- **Cyber Verification Program** (currently US-only)
+- **Life Sciences Verification Program** (in partnership with the US government)
+
+## Pricing: The Real News
+
+Per-token pricing stayed the same: **$10 input / $50 output per million tokens**. But cache reads dropped **75% to $0.25 per million tokens**.
+
+This is huge for long-running agentic sessions. A coding agent that re-reads a 200,000-token cached prefix 50 times costs:
+- Fable 5: $10.00
+- Opus 5: $5.00
+- **Fable 5.1: $2.50**
+
+Anthropic reports practical savings of ~25% for typical workloads, up to ~45% for highly agentic ones.
+
+But there's a catch: Artificial Analysis found Fable 5.1 uses **1.7x more output tokens** than Fable 5 at max effort, making it **20% more expensive per task** despite the cache discount.
+
+## What's New in Fable 5.1
+
+### Vulnerability Discovery Now Allowed
+
+Fable 5.1 can now **discover software vulnerabilities** in source code — something Fable 5 blocked entirely. It still blocks:
+- Exploit generation
+- Penetration testing
+- Binary-based vulnerability scanning
+
+The cybersecurity safeguards now block **60% fewer false positives** than Fable 5 at launch. Users on Claude Code can expect ~60% fewer interventions per session.
+
+### Benchmark Performance
+
+| Benchmark | Fable 5.1 | Mythos 5.1 | Fable 5 | Opus 5 |
+|-----------|-----------|------------|---------|--------|
+| Terminal-Bench-Science 0.1 | 52.6% | — | 24.7% | 29.0% |
+| Terminal-Bench 4.0 | 55.8% | 60.9% | 42.0% | 52.3% |
+| OSWorld 2.0 (partial) | 77.9% | — | 72.9% | 75.4% |
+| OSWorld 2.0 (strict) | 41.7% | — | 36.1% | 39.6% |
+| Humanity's Last Exam (no tools) | 60.9% | — | 57.8% | 56.6% |
+| AutomationBench | 31.4% | — | 17.1% | 26.9% |
+| CursorBench 3.2.0 | 73.4% | — | 70.5% | 70.0% |
+
+Fable 5.1 leads the Artificial Analysis Intelligence Index at **66 points** (max effort), ahead of Opus 5 (63), Fable 5 (62), and GPT-5.6 Sol (61).
+
+### Mythos 5.1: The Unleashed Version
+
+With cybersecurity safeguards off, Mythos 5.1 demonstrates **the strongest cyber capabilities of any model Anthropic has released** — meeting or exceeding Mythos 5 across:
+- ExploitBench
+- OSS-Fuzz
+- Firefox 147
+- ExploitGym
+
+Anthropic says Mythos 5.1 still **falls short of CB-2** (their next risk tier), meaning it can't fully substitute for top human talent. But critics disagree — Zvi Substack noted it's "likely to be Tier 2, similar to Astra."
+
+## User Feedback
+
+Early reviews are mixed:
+
+**The good:**
+- "A big improvement in style, sounds less stereotypically like other Claude models" — Felix Rieseberg, Anthropic employee
+- Follows style instructions more reliably
+- Huge leap on science benchmarks (doubled Terminal-Bench-Science score)
+
+**The bad:**
+- Some users report burning through multi-hour session quotas in ~20 minutes
+- Hallucination regression — attempts answers more often when it's wrong
+- Rate limits and subscription UX frustrations
+- Data retention (30-day default) keeps it out of regulated industries
+
+**The expensive:**
+- At $10/$50, it's double Opus 5's pricing
+- The cache discount helps, but increased output token usage offsets savings for many workloads
+
+## The Bottom Line
+
+Fable 5.1 is Anthropic's best coding model yet, and the cache pricing makes it genuinely attractive for long-running agentic work. But it's not the slam-dunk win the benchmarks suggest — real-world costs are higher than expected, and the capability gains over Fable 5 are concentrated in specific domains (science, long-horizon coding) rather than across the board.
+
+Mythos 5.1 is where the real power lives, but access is gated by geography and vetting. If you're a non-US defender, you're out of luck for now.

@@ -14,8 +14,7 @@ export default function Footer() {
               Dismas Muriuki
             </h3>
             <p className="text-dark-300 mb-4 max-w-md">
-              Backend dev & DB junkie — a strong believer in peer-to-peer technology and blockchain tech. 
-              I build dependable systems and mentor junior devs.
+              Software engineer specializing in AI agent architectures, multi-provider LLM routing, blockchain voting platforms, and security tools. 16+ production-grade systems built independently.
             </p>
             <div className="flex space-x-4">
               <a
@@ -80,12 +79,12 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://github.com/danny-dis/danny-dis"
+                  href="https://github.com/danny-dis"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-dark-400 hover:text-primary-400 transition-colors inline-flex items-center gap-1"
                 >
-                  Profile Repo <ExternalLink size={14} />
+                  GitHub <ExternalLink size={14} />
                 </a>
               </li>
             </ul>

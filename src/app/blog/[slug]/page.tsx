@@ -1,9 +1,10 @@
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft, Calendar, Clock, Share2 } from 'lucide-react'
+import { ArrowLeft, Calendar, Clock } from 'lucide-react'
 import { getBlogPostBySlug, getAllBlogPosts } from '@/lib/blog'
 import { MDXRemote } from 'next-mdx-remote/rsc'
+import ShareButton from '@/components/ShareButton'
 
 interface BlogPostPageProps {
   params: {
@@ -88,23 +89,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </p>
 
           {/* Share Button */}
-          <button
-            onClick={() => {
-              if (navigator.share) {
-                navigator.share({
-                  title: post.title,
-                  text: post.description,
-                  url: shareUrl,
-                })
-              } else {
-                navigator.clipboard.writeText(shareUrl)
-              }
-            }}
-            className="inline-flex items-center space-x-2 text-dark-400 hover:text-primary-400 transition-colors"
-          >
-            <Share2 size={18} />
-            <span>Share this post</span>
-          </button>
+          <ShareButton shareUrl={shareUrl} title={post.title} description={post.description} />
         </header>
 
         {/* Article Content */}

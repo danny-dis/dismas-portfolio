@@ -22,9 +22,7 @@ export default async function HomePage() {
             About Me
           </h2>
           <p className="text-lg text-dark-300 mb-8 leading-relaxed">
-            I grew up in Meru County, Kenya in a small town called Mikinduri. 
-            I ran my first instance of Linux in Termux on my Android phone (a Ulefone). 
-            I wrote my first code (hello world) in HTML still on my phone and I was happy as f*ck.
+            Self-directed software engineer who has independently built and shipped <span className="text-primary-400 font-semibold">16+ production-grade systems</span> spanning AI agent architectures, multi-provider LLM routing, blockchain voting platforms, and security tools. BSc Computer Science candidate (expected 2026). Seeking remote roles with European, American, or Asian teams.
           </p>
           <div className="flex justify-center items-center space-x-8 mb-8">
             <div className="flex items-center space-x-2 text-dark-400">
@@ -57,8 +55,7 @@ export default async function HomePage() {
               Featured Projects
             </h2>
             <p className="text-lg text-dark-400 max-w-2xl mx-auto">
-              Building modular, self-hosted apps and blockchain peer-to-peer systems 
-              that prioritize freedom and decentralization.
+              Production-grade systems built independently — from AI agents to blockchain voting.
             </p>
           </div>
 
@@ -91,18 +88,20 @@ export default async function HomePage() {
             <div className="glass rounded-lg p-6">
               <h3 className="text-xl font-semibold text-primary-400 mb-4">Short-term</h3>
               <ul className="space-y-3 text-dark-300">
-                <li>• Build out VigilNet — a secure network running on devices that can browse onion, Loki, and I2P sites</li>
-                <li>• Refine the Decentralized Voting System project and pitch it to local schools</li>
-                <li>• Develop penetration testing skills and dive deeper into cyber-security</li>
+                <li>• Land a remote role with a European or American tech company</li>
+                <li>• Contribute to major open-source AI/agent projects</li>
+                <li>• Build out A.R.G.U.S into a full security platform</li>
+                <li>• Ship production-ready MCP tooling for DMR-X</li>
               </ul>
             </div>
             
             <div className="glass rounded-lg p-6">
               <h3 className="text-xl font-semibold text-primary-400 mb-4">Long-term</h3>
               <ul className="space-y-3 text-dark-300">
-                <li>• Create a fully self-hosted, peer-to-peer network layer where every device can act as both server and client</li>
-                <li>• Become recognised for modular, self-hosted apps and blockchain peer-to-peer systems</li>
-                <li>• Grow a portfolio of open-source tools that schools and communities actually deploy</li>
+                <li>• Create a fully self-hosted, peer-to-peer network layer</li>
+                <li>• Become recognised for modular, self-hosted apps and blockchain systems</li>
+                <li>• Grow a portfolio of open-source tools that communities actually deploy</li>
+                <li>• Build a decentralized AI infrastructure platform</li>
               </ul>
             </div>
           </div>
@@ -166,7 +165,7 @@ export default async function HomePage() {
             Let's Build Something Together
           </h2>
           <p className="text-lg text-dark-300 mb-8 max-w-2xl mx-auto">
-            Whether you're interested in peer-to-peer systems, blockchain technology, 
+            Whether you're interested in AI systems, blockchain technology, 
             or just want to chat about building the future of decentralized applications.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

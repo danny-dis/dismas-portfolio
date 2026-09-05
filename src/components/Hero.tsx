@@ -4,12 +4,12 @@ import { useState, useEffect } from 'react'
 import { ChevronDown } from 'lucide-react'
 
 const typewriterTexts = [
-  'Backend Developer',
-  'Database Enthusiast',
-  'P2P Technology Advocate',
-  'Blockchain Believer',
-  'System Builder',
-  'FOSS Advocate'
+  'Software Engineer',
+  'AI Systems Builder',
+  'Blockchain Developer',
+  'Full-Stack Engineer',
+  'Security Researcher',
+  'Systems Architect'
 ]
 
 export default function Hero() {
@@ -65,8 +65,7 @@ export default function Hero() {
           </div>
 
           <p className="text-lg md:text-xl text-dark-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Backend dev & DB junkie — a strong believer in peer-to-peer technology and blockchain tech. 
-            I build dependable systems and mentor junior devs. I love coffee and old cars.
+            Self-directed engineer who has independently built and shipped 16+ production-grade systems spanning AI agent architectures, multi-provider LLM routing, blockchain voting platforms, and security tools.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

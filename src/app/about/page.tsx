@@ -3,7 +3,7 @@ import { MapPin, Code, Heart, Zap } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Learn about Dismas Muriuki - his journey from Meru County, Kenya to becoming a backend developer and blockchain enthusiast.',
+  description: 'Learn about Dismas Muriuki — software engineer from Kenya specializing in AI systems, blockchain, and full-stack development.',
 }
 
 export default function AboutPage() {
@@ -16,8 +16,7 @@ export default function AboutPage() {
             About Me
           </h1>
           <p className="text-xl text-dark-300 max-w-2xl mx-auto">
-            From a small town in Kenya to building decentralized systems — 
-            here's my journey in technology and philosophy.
+            From a small town in Kenya to building AI systems and blockchain platforms — here's my journey.
           </p>
         </div>
 
@@ -37,9 +36,13 @@ export default function AboutPage() {
                 I ran my first instance of Linux in Termux on my Android phone (a Ulefone). Then I got a laptop and 
                 installed Linux within the first 3 months.
               </p>
-              <p className="text-dark-300 leading-relaxed">
+              <p className="text-dark-300 leading-relaxed mb-4">
                 I joined campus without much knowledge to study BSc Computer Science though I thought myself better 
                 than most of my classmates on the practical side.
+              </p>
+              <p className="text-dark-300 leading-relaxed">
+                Today, I've independently architected and shipped 16+ production-grade repositories spanning AI, 
+                blockchain, security, and developer tools — all before graduating.
               </p>
             </div>
           </div>
@@ -73,6 +76,31 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* What I've Built */}
+        <section className="mb-16">
+          <div className="glass rounded-lg p-8">
+            <div className="flex items-center space-x-3 mb-6">
+              <Zap className="text-primary-400" size={24} />
+              <h2 className="text-2xl font-semibold text-dark-100">What I've Built</h2>
+            </div>
+            <div className="prose prose-lg max-w-none">
+              <p className="text-dark-300 leading-relaxed mb-4">
+                In the past year alone, I've independently built and shipped production-grade systems:
+              </p>
+              <ul className="text-dark-300 space-y-2 mb-4">
+                <li>• <strong className="text-primary-400">A.R.G.U.S</strong> — 244+ Python files, 28 specialist agents for autonomous red teaming</li>
+                <li>• <strong className="text-primary-400">Chimera</strong> — Parallel multi-agent coding platform with cost-aware routing</li>
+                <li>• <strong className="text-primary-400">DMR-X</strong> — Universal AI routing to 57+ providers with MCP server</li>
+                <li>• <strong className="text-primary-400">N.O.E.S.I.S</strong> — Collective brain with temporal knowledge graph for agent fleets</li>
+                <li>• <strong className="text-primary-400">VoteChain</strong> — Blockchain voting SaaS with multi-tenant smart contracts</li>
+              </ul>
+              <p className="text-dark-300 leading-relaxed">
+                I don't build tutorials. I build systems that work.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Philosophy */}
         <section className="mb-16">
           <div className="glass rounded-lg p-8">
@@ -82,21 +110,24 @@ export default function AboutPage() {
             </div>
             <div className="prose prose-lg max-w-none">
               <p className="text-dark-300 leading-relaxed mb-4">
-                I hate coding the traditional way but with AI we can now build whatever we want — call it vibe coding. 
-                All I need now is resources to self-host the best models and build apps without restrictions.
+                <strong className="text-primary-400">FOSS is one of my biggest philosophies — free as in freedom.</strong>
               </p>
               <p className="text-dark-300 leading-relaxed mb-4">
-                <strong className="text-primary-400">FOSS is one of my biggest philosophies — free as in freedom.</strong>
+                I hate coding the traditional way but with AI we can now build whatever we want — call it vibe coding. 
+                All I need now is resources to self-host the best models and build apps without restrictions.
               </p>
               <p className="text-dark-300 leading-relaxed mb-4">
                 Recently I learned from David Meisler (Unsupervised Learning) that you can build solutions modular 
                 to be reused in different projects. I want to build my apps with so much modularity that the modules 
                 can be mix-matched however we feel like.
               </p>
-              <p className="text-dark-300 leading-relaxed">
+              <p className="text-dark-300 leading-relaxed mb-4">
                 I also believe in a world where every device is a server and client device in a blockchain-type network. 
                 Some of my apps are designed with the idea of no central server; each device installing the app contributes 
                 to the system and the bigger the user base grows the stronger and more resilient the system runs.
+              </p>
+              <p className="text-dark-300 leading-relaxed">
+                <strong className="text-primary-400">ALL DATA IS USEFUL DATA</strong> — never throw away data lacking immediate metadata.
               </p>
             </div>
           </div>

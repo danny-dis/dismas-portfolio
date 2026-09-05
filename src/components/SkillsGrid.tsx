@@ -4,17 +4,33 @@ import { useEffect, useState } from 'react'
 import { Skill } from '@/types'
 
 const skills: Skill[] = [
-  { name: 'MySQL', level: 'Advanced', category: 'Backend' },
-  { name: 'Linux / Systems', level: 'Highly knowledgeable', category: 'Systems' },
-  { name: 'Shell scripting', level: 'Comfortable', category: 'Systems' },
-  { name: 'Node.js', level: 'Intermediate', category: 'Backend' },
-  { name: 'React', level: 'Intermediate', category: 'Frontend' },
-  { name: 'Python', level: 'Intermediate', category: 'Languages' },
-  { name: 'Rust', level: 'Beginner', category: 'Languages' },
-  { name: 'AI / Machine Learning', level: 'Beginner', category: 'AI/ML' },
+  { name: 'TypeScript', level: 'Advanced', category: 'Languages' },
+  { name: 'Python', level: 'Advanced', category: 'Languages' },
+  { name: 'Rust', level: 'Intermediate', category: 'Languages' },
+  { name: 'Solidity', level: 'Intermediate', category: 'Languages' },
+  { name: 'Node.js', level: 'Advanced', category: 'Backend' },
+  { name: 'React', level: 'Advanced', category: 'Frontend' },
+  { name: 'Next.js', level: 'Advanced', category: 'Frontend' },
+  { name: 'FastAPI', level: 'Intermediate', category: 'Backend' },
+  { name: 'PostgreSQL', level: 'Advanced', category: 'Backend' },
+  { name: 'SQLite', level: 'Advanced', category: 'Backend' },
+  { name: 'MongoDB', level: 'Intermediate', category: 'Backend' },
+  { name: 'Neo4j', level: 'Intermediate', category: 'Backend' },
+  { name: 'AI Agents', level: 'Advanced', category: 'AI/ML' },
+  { name: 'LLM Routing', level: 'Advanced', category: 'AI/ML' },
+  { name: 'MCP Protocol', level: 'Advanced', category: 'AI/ML' },
+  { name: 'Smart Contracts', level: 'Intermediate', category: 'Blockchain' },
+  { name: 'Foundry', level: 'Intermediate', category: 'Blockchain' },
+  { name: 'Docker', level: 'Intermediate', category: 'DevOps' },
+  { name: 'CI/CD', level: 'Intermediate', category: 'DevOps' },
+  { name: 'Git', level: 'Advanced', category: 'DevOps' },
+  { name: 'Linux / Systems', level: 'Advanced', category: 'Systems' },
+  { name: 'Shell scripting', level: 'Advanced', category: 'Systems' },
+  { name: 'WebSockets', level: 'Advanced', category: 'Backend' },
+  { name: 'REST/GraphQL', level: 'Advanced', category: 'Backend' },
 ]
 
-const levelColors = {
+const levelColors: Record<string, string> = {
   'Beginner': 'bg-yellow-600',
   'Intermediate': 'bg-blue-600',
   'Advanced': 'bg-green-600',
@@ -22,12 +38,14 @@ const levelColors = {
   'Comfortable': 'bg-teal-600',
 }
 
-const categoryColors = {
+const categoryColors: Record<string, string> = {
   'Backend': 'border-primary-500',
   'Frontend': 'border-blue-500',
   'Systems': 'border-purple-500',
   'Languages': 'border-green-500',
   'AI/ML': 'border-yellow-500',
+  'Blockchain': 'border-orange-500',
+  'DevOps': 'border-cyan-500',
 }
 
 export default function SkillsGrid() {
@@ -48,8 +66,7 @@ export default function SkillsGrid() {
             Technical Skills
           </h2>
           <p className="text-lg text-dark-400 max-w-2xl mx-auto">
-            My expertise spans across backend development, systems administration, 
-            and emerging technologies like blockchain and AI.
+            My expertise spans AI systems, blockchain, full-stack development, and security — built through 16+ production-grade projects.
           </p>
         </div>
 
@@ -57,17 +74,17 @@ export default function SkillsGrid() {
           {skills.map((skill, index) => (
             <div
               key={skill.name}
-              className={`glass rounded-lg p-6 border-l-4 ${categoryColors[skill.category]} 
+              className={`glass rounded-lg p-6 border-l-4 ${categoryColors[skill.category] || 'border-gray-500'} 
                 hover-lift transition-all duration-300 ${
                   visibleSkills[index] ? 'fade-in visible' : 'fade-in'
                 }`}
-              style={{ transitionDelay: `${index * 100}ms` }}
+              style={{ transitionDelay: `${index * 50}ms` }}
             >
               <div className="flex items-center justify-between mb-3">
                 <h3 className="font-semibold text-dark-100">{skill.name}</h3>
                 <span
                   className={`px-2 py-1 rounded-full text-xs font-medium text-white ${
-                    levelColors[skill.level]
+                    levelColors[skill.level] || 'bg-gray-600'
                   }`}
                 >
                   {skill.level}
@@ -79,11 +96,11 @@ export default function SkillsGrid() {
               <div className="w-full bg-dark-700 rounded-full h-2">
                 <div
                   className={`h-2 rounded-full transition-all duration-1000 ${
-                    levelColors[skill.level]
+                    levelColors[skill.level] || 'bg-gray-600'
                   }`}
                   style={{
                     width: visibleSkills[index] ? getSkillWidth(skill.level) : '0%',
-                    transitionDelay: `${index * 100 + 300}ms`,
+                    transitionDelay: `${index * 50 + 300}ms`,
                   }}
                 />
               </div>
@@ -93,7 +110,7 @@ export default function SkillsGrid() {
 
         <div className="mt-12 text-center">
           <p className="text-dark-400 italic">
-            "I hate coding the traditional way but with AI we can now build whatever we want — call it vibe coding."
+            "I don't just write code — I build systems."
           </p>
         </div>
       </div>

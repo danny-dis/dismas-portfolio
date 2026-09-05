@@ -27,5 +27,5 @@ export interface ContactFormData {
 export interface Skill {
   name: string
   level: 'Beginner' | 'Intermediate' | 'Advanced' | 'Highly knowledgeable' | 'Comfortable'
-  category: 'Backend' | 'Frontend' | 'Systems' | 'Languages' | 'AI/ML'
+  category: 'Backend' | 'Frontend' | 'Systems' | 'Languages' | 'AI/ML' | 'Blockchain' | 'DevOps'
 }

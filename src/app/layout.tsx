@@ -8,25 +8,25 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: {
-    default: 'Dismas Muriuki - Backend Developer & DB Junkie',
+    default: 'Dismas Muriuki — Software Engineer | AI Systems | Blockchain',
     template: '%s | Dismas Muriuki',
   },
-  description: 'Backend dev & DB junkie — a strong believer in peer-to-peer technology and blockchain tech. I build dependable systems and mentor junior devs.',
-  keywords: ['Backend Developer', 'Database', 'Blockchain', 'P2P', 'Node.js', 'React', 'Kenya'],
+  description: 'Software engineer specializing in AI agent architectures, multi-provider LLM routing, blockchain voting platforms, and security tools. 16+ production-grade systems built independently.',
+  keywords: ['Software Engineer', 'AI Systems', 'Blockchain', 'Full-Stack', 'TypeScript', 'Python', 'Rust', 'Solidity', 'Kenya', 'Remote'],
   authors: [{ name: 'Dismas Muriuki', url: 'https://dismas.dev' }],
   creator: 'Dismas Muriuki',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: 'https://dismas.dev',
-    title: 'Dismas Muriuki - Backend Developer & DB Junkie',
-    description: 'Backend dev & DB junkie — a strong believer in peer-to-peer technology and blockchain tech.',
+    title: 'Dismas Muriuki — Software Engineer | AI Systems | Blockchain',
+    description: 'Software engineer specializing in AI agent architectures, multi-provider LLM routing, blockchain voting platforms, and security tools.',
     siteName: 'Dismas Muriuki Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Dismas Muriuki - Backend Developer & DB Junkie',
-    description: 'Backend dev & DB junkie — a strong believer in peer-to-peer technology and blockchain tech.',
+    title: 'Dismas Muriuki — Software Engineer | AI Systems | Blockchain',
+    description: 'Software engineer specializing in AI agent architectures, multi-provider LLM routing, blockchain voting platforms, and security tools.',
   },
   robots: {
     index: process.env.NODE_ENV === 'production',
