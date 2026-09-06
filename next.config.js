@@ -8,10 +8,7 @@ const withMDX = require('@next/mdx')({
 })
 
 const nextConfig = {
-  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-  experimental: {
-    mdxRs: true,
-  },
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx'],
   images: {
     domains: ['github.com'],
   },
