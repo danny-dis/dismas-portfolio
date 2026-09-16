@@ -1,227 +1,54 @@
 import { Metadata } from 'next'
-import { MapPin, Code, Heart, Zap } from 'lucide-react'
+import { MapPin, Code2, Heart, Layers3, Palette } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Learn about Dismas Muriuki — software engineer from Kenya specializing in AI systems, blockchain, and full-stack development.',
+  description: 'About Dismas Muriuki — a designer and coder combining UI/UX, frontend engineering and creative technology.',
 }
 
 export default function AboutPage() {
   return (
-    <div className="pt-32 pb-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-dark-100 mb-6">
-            About Me
-          </h1>
-          <p className="text-xl text-dark-300 max-w-2xl mx-auto">
-            From a small town in Kenya to building AI systems and blockchain platforms — here's my journey.
-          </p>
+    <div className="pt-32 pb-24">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="max-w-3xl mb-16">
+          <p className="text-primary-400 font-semibold tracking-widest text-sm mb-3">ABOUT ME</p>
+          <h1 className="text-4xl md:text-6xl font-bold text-dark-100 mb-6">Designer + coder, still very much a builder.</h1>
+          <p className="text-xl text-dark-400 leading-relaxed">I started with code, discovered how much interface and visual decisions affect a product, and am deliberately building both sides together.</p>
+        </header>
+
+        <div className="space-y-8">
+          <section className="glass rounded-2xl p-8 md:p-10">
+            <div className="flex items-center gap-3 mb-6"><MapPin className="text-primary-400" size={24} /><h2 className="text-2xl font-semibold text-dark-100">Where I come from</h2></div>
+            <div className="prose prose-lg max-w-none">
+              <p>I grew up in Meru County, Kenya. My route into technology was practical and self-directed: I first ran Linux through Termux on an Android phone, then moved to a laptop and kept learning by building.</p>
+              <p>I completed my BSc Computer Science coursework at Murang’a University of Technology and expect to graduate in 2027.</p>
+            </div>
+          </section>
+
+          <section className="grid md:grid-cols-2 gap-6">
+            <div className="glass rounded-2xl p-8"><Code2 className="text-primary-400 mb-5" size={26} /><h2 className="text-xl font-semibold text-dark-100 mb-3">Engineering foundation</h2><p className="text-dark-400 leading-relaxed">Most of my work has been software: AI systems, developer tools, frontend applications, distributed ideas and infrastructure. I enjoy understanding how the pieces work underneath.</p></div>
+            <div className="glass rounded-2xl p-8"><Palette className="text-primary-400 mb-5" size={26} /><h2 className="text-xl font-semibold text-dark-100 mb-3">Growing the design side</h2><p className="text-dark-400 leading-relaxed">I am building practical UI/UX and visual-design experience through interface work and personal exercises in branding, marketing graphics and print design.</p></div>
+          </section>
+
+          <section className="glass rounded-2xl p-8 md:p-10">
+            <div className="flex items-center gap-3 mb-8"><Layers3 className="text-primary-400" size={24} /><h2 className="text-2xl font-semibold text-dark-100">How I think about products</h2></div>
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                ['Clarity', 'A product should make its purpose and next action understandable.'],
+                ['Modularity', 'Reusable components make systems easier to evolve and recombine.'],
+                ['Ownership', 'I am interested in open, self-hostable technology and user control.'],
+                ['Learning by building', 'I learn fastest by studying real systems, experimenting and shipping working pieces.'],
+              ].map(([title, body]) => <div key={title}><h3 className="text-lg font-semibold text-primary-400 mb-2">{title}</h3><p className="text-dark-400 leading-relaxed">{body}</p></div>)}
+            </div>
+          </section>
+
+          <section className="glass rounded-2xl p-8 md:p-10">
+            <div className="flex items-center gap-3 mb-6"><Heart className="text-primary-400" size={24} /><h2 className="text-2xl font-semibold text-dark-100">Beyond the work</h2></div>
+            <div className="grid md:grid-cols-2 gap-6 text-dark-400">
+              <p>☕ Coffee, especially during long building sessions.</p><p>🚗 Old cars and the craftsmanship behind them.</p><p>🎓 Sharing what I learn with other developers.</p><p>🔒 Privacy, security and technology that gives people more control.</p>
+            </div>
+          </section>
         </div>
-
-        {/* Origin Story */}
-        <section className="mb-16">
-          <div className="glass rounded-lg p-8">
-            <div className="flex items-center space-x-3 mb-6">
-              <MapPin className="text-primary-400" size={24} />
-              <h2 className="text-2xl font-semibold text-dark-100">My Origins</h2>
-            </div>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-dark-300 leading-relaxed mb-4">
-                I grew up in Meru County, Kenya in a small town called Mikinduri. I went into a local primary school 
-                and a secondary school within our county.
-              </p>
-              <p className="text-dark-300 leading-relaxed mb-4">
-                I ran my first instance of Linux in Termux on my Android phone (a Ulefone). Then I got a laptop and 
-                installed Linux within the first 3 months.
-              </p>
-              <p className="text-dark-300 leading-relaxed mb-4">
-                I joined campus without much knowledge to study BSc Computer Science though I thought myself better 
-                than most of my classmates on the practical side.
-              </p>
-              <p className="text-dark-300 leading-relaxed">
-                Today, I've independently architected and shipped 16+ production-grade repositories spanning AI, 
-                blockchain, security, and developer tools — all before graduating.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* First Code */}
-        <section className="mb-16">
-          <div className="glass rounded-lg p-8">
-            <div className="flex items-center space-x-3 mb-6">
-              <Code className="text-primary-400" size={24} />
-              <h2 className="text-2xl font-semibold text-dark-100">First Code</h2>
-            </div>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-dark-300 leading-relaxed mb-4">
-                I wrote my first code (hello world) in HTML still on my phone and I was happy as f*ck.
-              </p>
-              <div className="bg-dark-800 border border-dark-600 rounded-lg p-4 my-6">
-                <code className="text-primary-400 font-mono">
-                  &lt;html&gt;<br />
-                  &nbsp;&nbsp;&lt;body&gt;<br />
-                  &nbsp;&nbsp;&nbsp;&nbsp;&lt;h1&gt;Hello World!&lt;/h1&gt;<br />
-                  &nbsp;&nbsp;&lt;/body&gt;<br />
-                  &lt;/html&gt;
-                </code>
-              </div>
-              <p className="text-dark-300 leading-relaxed">
-                That moment of seeing "Hello World!" render on my phone screen was pure magic. 
-                It was the beginning of everything.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* What I've Built */}
-        <section className="mb-16">
-          <div className="glass rounded-lg p-8">
-            <div className="flex items-center space-x-3 mb-6">
-              <Zap className="text-primary-400" size={24} />
-              <h2 className="text-2xl font-semibold text-dark-100">What I've Built</h2>
-            </div>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-dark-300 leading-relaxed mb-4">
-                In the past year alone, I've independently built and shipped production-grade systems:
-              </p>
-              <ul className="text-dark-300 space-y-2 mb-4">
-                <li>• <strong className="text-primary-400">A.R.G.U.S</strong> — 244+ Python files, 28 specialist agents for autonomous red teaming</li>
-                <li>• <strong className="text-primary-400">Chimera</strong> — Parallel multi-agent coding platform with cost-aware routing</li>
-                <li>• <strong className="text-primary-400">DMR-X</strong> — Universal AI routing to 57+ providers with MCP server</li>
-                <li>• <strong className="text-primary-400">N.O.E.S.I.S</strong> — Collective brain with temporal knowledge graph for agent fleets</li>
-                <li>• <strong className="text-primary-400">VoteChain</strong> — Blockchain voting SaaS with multi-tenant smart contracts</li>
-              </ul>
-              <p className="text-dark-300 leading-relaxed">
-                I don't build tutorials. I build systems that work.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Philosophy */}
-        <section className="mb-16">
-          <div className="glass rounded-lg p-8">
-            <div className="flex items-center space-x-3 mb-6">
-              <Heart className="text-primary-400" size={24} />
-              <h2 className="text-2xl font-semibold text-dark-100">Philosophy & Beliefs</h2>
-            </div>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-dark-300 leading-relaxed mb-4">
-                <strong className="text-primary-400">FOSS is one of my biggest philosophies — free as in freedom.</strong>
-              </p>
-              <p className="text-dark-300 leading-relaxed mb-4">
-                I hate coding the traditional way but with AI we can now build whatever we want — call it vibe coding. 
-                All I need now is resources to self-host the best models and build apps without restrictions.
-              </p>
-              <p className="text-dark-300 leading-relaxed mb-4">
-                Recently I learned from David Meisler (Unsupervised Learning) that you can build solutions modular 
-                to be reused in different projects. I want to build my apps with so much modularity that the modules 
-                can be mix-matched however we feel like.
-              </p>
-              <p className="text-dark-300 leading-relaxed mb-4">
-                I also believe in a world where every device is a server and client device in a blockchain-type network. 
-                Some of my apps are designed with the idea of no central server; each device installing the app contributes 
-                to the system and the bigger the user base grows the stronger and more resilient the system runs.
-              </p>
-              <p className="text-dark-300 leading-relaxed">
-                <strong className="text-primary-400">ALL DATA IS USEFUL DATA</strong> — never throw away data lacking immediate metadata.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Vision */}
-        <section className="mb-16">
-          <div className="glass rounded-lg p-8">
-            <div className="flex items-center space-x-3 mb-6">
-              <Zap className="text-primary-400" size={24} />
-              <h2 className="text-2xl font-semibold text-dark-100">My Vision</h2>
-            </div>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-dark-300 leading-relaxed mb-6">
-                I envision a future where technology serves freedom, not control. Where every individual has 
-                the power to participate in truly decentralized networks without depending on centralized authorities.
-              </p>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="bg-dark-800/50 rounded-lg p-6 border-l-4 border-primary-500">
-                  <h3 className="text-lg font-semibold text-dark-100 mb-3">Decentralization</h3>
-                  <p className="text-dark-300 text-sm">
-                    Building systems where power is distributed, not concentrated. 
-                    Every device becomes part of the network.
-                  </p>
-                </div>
-                
-                <div className="bg-dark-800/50 rounded-lg p-6 border-l-4 border-green-500">
-                  <h3 className="text-lg font-semibold text-dark-100 mb-3">Modularity</h3>
-                  <p className="text-dark-300 text-sm">
-                    Creating reusable components that can be mixed and matched 
-                    to build exactly what's needed.
-                  </p>
-                </div>
-                
-                <div className="bg-dark-800/50 rounded-lg p-6 border-l-4 border-blue-500">
-                  <h3 className="text-lg font-semibold text-dark-100 mb-3">Self-Hosting</h3>
-                  <p className="text-dark-300 text-sm">
-                    Empowering individuals and communities to run their own 
-                    infrastructure and control their data.
-                  </p>
-                </div>
-                
-                <div className="bg-dark-800/50 rounded-lg p-6 border-l-4 border-purple-500">
-                  <h3 className="text-lg font-semibold text-dark-100 mb-3">Open Source</h3>
-                  <p className="text-dark-300 text-sm">
-                    Everything should be transparent, auditable, and 
-                    freely available for others to learn and improve.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Personal Interests */}
-        <section>
-          <div className="glass rounded-lg p-8">
-            <h2 className="text-2xl font-semibold text-dark-100 mb-6">Beyond Code</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-lg font-semibold text-primary-400 mb-3">☕ Coffee Enthusiast</h3>
-                <p className="text-dark-300">
-                  I love coffee and believe the best code is written with a good cup nearby. 
-                  There's something about the ritual of brewing that helps clear the mind for complex problems.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-lg font-semibold text-primary-400 mb-3">🚗 Old Cars</h3>
-                <p className="text-dark-300">
-                  I have a passion for old cars — there's beauty in mechanical simplicity and the craftsmanship 
-                  of an era when things were built to last and be repaired.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-lg font-semibold text-primary-400 mb-3">🎓 Mentoring</h3>
-                <p className="text-dark-300">
-                  I enjoy mentoring junior developers and sharing knowledge. The best way to solidify your 
-                  understanding is to teach others.
-                </p>
-              </div>
-              
-              <div>
-                <h3 className="text-lg font-semibold text-primary-400 mb-3">🔒 Privacy & Security</h3>
-                <p className="text-dark-300">
-                  Developing skills in penetration testing and cyber-security. Privacy and security 
-                  should be fundamental rights, not luxuries.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </div>
   )
