@@ -2,185 +2,141 @@ import Hero from '@/components/Hero'
 import SkillsGrid from '@/components/SkillsGrid'
 import ProjectCard from '@/components/ProjectCard'
 import { getFeaturedProjects } from '@/lib/projects'
-import { getLatestBlogPosts } from '@/lib/blog'
 import Link from 'next/link'
-import { ArrowRight, Coffee, Car } from 'lucide-react'
+import { ArrowRight, Check, Code2, Palette, Sparkles } from 'lucide-react'
 
-export default async function HomePage() {
-  const featuredProjects = getFeaturedProjects()
-  const latestPosts = await getLatestBlogPosts(2)
+export default function HomePage() {
+  const featuredProjects = getFeaturedProjects().slice(0, 6)
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
       <Hero />
 
-      {/* About Preview */}
-      <section id="about-preview" className="py-20 bg-dark-800/30">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-100 mb-8">
-            About Me
-          </h2>
-          <p className="text-lg text-dark-300 mb-8 leading-relaxed">
-            Self-directed software engineer who has independently built and shipped <span className="text-primary-400 font-semibold">16+ production-grade systems</span> spanning AI agent architectures, multi-provider LLM routing, blockchain voting platforms, and security tools. BSc Computer Science candidate (expected 2026). Seeking remote roles with European, American, or Asian teams.
-          </p>
-          <div className="flex justify-center items-center space-x-8 mb-8">
-            <div className="flex items-center space-x-2 text-dark-400">
-              <Coffee size={20} />
-              <span>Coffee Lover</span>
+      {/* Positioning */}
+      <section className="py-20 border-y border-dark-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="text-primary-400 font-semibold mb-3">WHAT I DO</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-dark-100 mb-6">
+                I sit between design and code.
+              </h2>
+              <p className="text-lg text-dark-400 leading-relaxed">
+                My computer-science background gives me a strong engineering foundation. I am now deliberately growing the design side: learning visual design, building UI/UX work, and developing a practical graphic-design portfolio.
+              </p>
             </div>
-            <div className="flex items-center space-x-2 text-dark-400">
-              <Car size={20} />
-              <span>Old Cars Enthusiast</span>
+            <div className="grid sm:grid-cols-2 gap-4">
+              <div className="glass rounded-2xl p-6">
+                <Palette className="text-primary-400 mb-4" size={28} />
+                <h3 className="font-semibold text-dark-100 mb-2">Design</h3>
+                <p className="text-sm text-dark-400">Interfaces, layouts, wireframes, prototypes, visual hierarchy and design systems.</p>
+              </div>
+              <div className="glass rounded-2xl p-6">
+                <Code2 className="text-primary-400 mb-4" size={28} />
+                <h3 className="font-semibold text-dark-100 mb-2">Engineering</h3>
+                <p className="text-sm text-dark-400">React, Next.js, TypeScript and the software systems that turn designs into working products.</p>
+              </div>
             </div>
           </div>
-          <Link
-            href="/about"
-            className="inline-flex items-center space-x-2 text-primary-400 hover:text-primary-300 transition-colors"
-          >
-            <span>Read my full story</span>
-            <ArrowRight size={18} />
-          </Link>
         </div>
       </section>
 
-      {/* Skills Section */}
-      <SkillsGrid />
-
-      {/* Featured Projects */}
-      <section className="py-20">
+      {/* Work */}
+      <section id="work" className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-100 mb-4">
-              Featured Projects
-            </h2>
-            <p className="text-lg text-dark-400 max-w-2xl mx-auto">
-              Production-grade systems built independently — from AI agents to blockchain voting.
-            </p>
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-12">
+            <div>
+              <p className="text-primary-400 font-semibold mb-3">SELECTED WORK</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-dark-100 mb-3">Design thinking, shipped as software.</h2>
+              <p className="text-lg text-dark-400 max-w-2xl">Real projects where product thinking, interface decisions and engineering meet.</p>
+            </div>
+            <Link href="/projects" className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 font-semibold">
+              View all work <ArrowRight size={18} />
+            </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {featuredProjects.map((project) => (
               <ProjectCard key={project.id} project={project} featured />
             ))}
           </div>
-
-          <div className="text-center">
-            <Link
-              href="/projects"
-              className="inline-flex items-center space-x-2 bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 hover-lift"
-            >
-              <span>View All Projects</span>
-              <ArrowRight size={18} />
-            </Link>
-          </div>
         </div>
       </section>
 
-      {/* Goals Preview */}
+      {/* Design practice */}
       <section className="py-20 bg-dark-800/50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-100 mb-12 text-center">
-            My Goals
-          </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="glass rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-primary-400 mb-4">Short-term</h3>
-              <ul className="space-y-3 text-dark-300">
-                <li>• Land a remote role with a European or American tech company</li>
-                <li>• Contribute to major open-source AI/agent projects</li>
-                <li>• Build out A.R.G.U.S into a full security platform</li>
-                <li>• Ship production-ready MCP tooling for DMR-X</li>
-              </ul>
-            </div>
-            
-            <div className="glass rounded-lg p-6">
-              <h3 className="text-xl font-semibold text-primary-400 mb-4">Long-term</h3>
-              <ul className="space-y-3 text-dark-300">
-                <li>• Create a fully self-hosted, peer-to-peer network layer</li>
-                <li>• Become recognised for modular, self-hosted apps and blockchain systems</li>
-                <li>• Grow a portfolio of open-source tools that communities actually deploy</li>
-                <li>• Build a decentralized AI infrastructure platform</li>
-              </ul>
-            </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mb-12">
+            <p className="text-primary-400 font-semibold mb-3">DESIGN PRACTICE</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-dark-100 mb-5">Building the visual-design side honestly.</h2>
+            <p className="text-lg text-dark-400 leading-relaxed">
+              I do not pretend that personal practice is client experience. I am building a focused set of branding, social, print and marketing exercises alongside my existing UI/UX and software work.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              ['Brand identity', 'Logo exploration, colour palette, typography and simple brand collateral.'],
+              ['Marketing graphics', 'Social posts and promotional layouts designed for clear communication.'],
+              ['Print design', 'Poster, flyer, business-card and brochure exercises with print-aware layouts.'],
+            ].map(([title, description]) => (
+              <article key={title} className="glass rounded-2xl p-6">
+                <Sparkles className="text-primary-400 mb-4" size={22} />
+                <h3 className="font-semibold text-dark-100 mb-2">{title}</h3>
+                <p className="text-sm text-dark-400 leading-relaxed">{description}</p>
+                <span className="inline-block mt-5 text-xs text-dark-500 uppercase tracking-wider">Personal practice</span>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Latest Blog Posts */}
-      {latestPosts.length > 0 && (
-        <section className="py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-dark-100 mb-4">
-                Latest Blog Posts
-              </h2>
-              <p className="text-lg text-dark-400">
-                Thoughts on technology, development, and building the future.
-              </p>
-            </div>
+      <SkillsGrid />
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-              {latestPosts.map((post) => (
-                <article key={post.slug} className="glass rounded-lg p-6 hover-lift transition-all duration-300">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <time className="text-sm text-dark-400">{new Date(post.date).toLocaleDateString()}</time>
-                    <span className="text-sm text-primary-400">{post.readTime}</span>
-                  </div>
-                  <h3 className="text-xl font-semibold text-dark-100 mb-3">
-                    <Link href={`/blog/${post.slug}`} className="hover:text-primary-400 transition-colors">
-                      {post.title}
-                    </Link>
-                  </h3>
-                  <p className="text-dark-300 mb-4 line-clamp-3">{post.description}</p>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="text-primary-400 hover:text-primary-300 transition-colors inline-flex items-center space-x-1"
-                  >
-                    <span>Read more</span>
-                    <ArrowRight size={16} />
-                  </Link>
-                </article>
-              ))}
-            </div>
-
-            <div className="text-center">
-              <Link
-                href="/blog"
-                className="inline-flex items-center space-x-2 border border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 hover-lift"
-              >
-                <span>View All Posts</span>
-                <ArrowRight size={18} />
-              </Link>
-            </div>
+      {/* Process */}
+      <section className="py-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-primary-400 font-semibold mb-3">MY APPROACH</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-dark-100">From idea to interface to implementation.</h2>
           </div>
-        </section>
-      )}
+          <div className="grid md:grid-cols-4 gap-4">
+            {['Understand the problem', 'Explore structure & visual direction', 'Design the experience', 'Build, test & refine'].map((step, index) => (
+              <div key={step} className="glass rounded-2xl p-6">
+                <div className="w-9 h-9 rounded-full bg-primary-600/20 text-primary-400 flex items-center justify-center font-bold mb-5">{index + 1}</div>
+                <p className="text-dark-200 font-medium">{step}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* Contact CTA */}
-      <section className="py-20 bg-gradient-to-r from-primary-900/20 to-primary-800/20">
+      {/* About / education */}
+      <section className="py-20 bg-dark-800/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark-100 mb-4">
-            Let's Build Something Together
-          </h2>
-          <p className="text-lg text-dark-300 mb-8 max-w-2xl mx-auto">
-            Whether you're interested in AI systems, blockchain technology, 
-            or just want to chat about building the future of decentralized applications.
+          <p className="text-primary-400 font-semibold mb-3">A LITTLE ABOUT ME</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark-100 mb-6">A coder learning to think visually — without leaving code behind.</h2>
+          <p className="text-lg text-dark-400 leading-relaxed mb-8">
+            I completed my BSc Computer Science coursework at Murang’a University of Technology and expect to graduate in 2027. I have spent most of my time building software, especially AI and developer tools, and I am expanding into design because I enjoy shaping how products look, feel and communicate.
           </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {['UI / UX', 'Frontend', 'TypeScript', 'React', 'Python', 'AI systems', 'Visual design', 'Fast learner'].map((item) => (
+              <span key={item} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-900 border border-dark-700 text-dark-300 text-sm">
+                <Check size={15} className="text-primary-400" /> {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact */}
+      <section className="py-24">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="text-primary-400 font-semibold mb-3">LET'S TALK</p>
+          <h2 className="text-4xl md:text-5xl font-bold text-dark-100 mb-5">Have a design problem to solve?</h2>
+          <p className="text-lg text-dark-400 mb-8">I would love to bring both sides of my skill set to a creative team.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 hover-lift"
-            >
-              Get In Touch
-            </Link>
-            <a
-              href="mailto:muriukidismas9@gmail.com"
-              className="border border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-200 hover-lift"
-            >
-              Send Email
-            </a>
+            <Link href="/contact" className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3.5 rounded-lg font-semibold transition-colors hover-lift">Get In Touch</Link>
+            <a href="mailto:muriukidismas9@gmail.com" className="border border-dark-600 hover:border-primary-500 text-dark-200 hover:text-primary-400 px-8 py-3.5 rounded-lg font-semibold transition-colors hover-lift">Email Me</a>
           </div>
         </div>
       </section>
