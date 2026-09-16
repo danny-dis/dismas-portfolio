@@ -3,12 +3,7 @@
 import { useState, useEffect } from 'react'
 import { ArrowDown, ArrowRight, Code2, Palette } from 'lucide-react'
 
-const typewriterTexts = [
-  'Designer + Coder',
-  'UI/UX Designer',
-  'Creative Technologist',
-  'Frontend Developer',
-]
+const typewriterTexts = ['Designer + Coder', 'UI/UX Designer', 'Creative Technologist', 'Frontend Developer']
 
 export default function Hero() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
@@ -29,60 +24,48 @@ export default function Hero() {
         }
       }
     }, isDeleting ? 45 : 85)
-
     return () => clearTimeout(timeout)
   }, [currentText, isDeleting, currentTextIndex])
 
   const scrollToWork = () => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
 
   return (
-    <section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_30%,rgba(124,58,237,0.12),transparent_45%)]" />
+    <section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden" aria-label="Introduction">
+      <div className="absolute inset-0 pointer-events-none grid-pattern" />
+      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_30%,rgba(20,184,166,0.12),transparent_42%)]" />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
         <div className="fade-in visible">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-dark-300 mb-8">
-            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" aria-hidden="true" />
             Designer + Coder · Kenya
           </div>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.02] mb-7">
             <span className="text-dark-100">I design </span>
-            <span className="text-primary-400">digital experiences</span>
+            <span className="text-gradient">digital experiences</span>
             <span className="text-dark-100"> and build them too.</span>
           </h1>
 
-          <div className="min-h-10 mb-7">
-            <p className="text-xl md:text-2xl text-dark-300">
-              <span className="text-primary-400 font-semibold">{currentText}</span>
-              <span className="animate-pulse">|</span>
-            </p>
+          <div className="min-h-10 mb-7" aria-live="polite" aria-label="Current role">
+            <p className="text-xl md:text-2xl text-dark-300"><span className="text-primary-400 font-semibold">{currentText}</span><span className="animate-pulse" aria-hidden="true">|</span></p>
           </div>
 
-          <p className="text-lg md:text-xl text-dark-400 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Computer science graduate-in-progress with a builder's mindset. I combine interface design,
-            visual thinking, and frontend engineering to turn ideas into usable digital products.
-          </p>
+          <p className="text-lg md:text-xl text-dark-400 mb-10 max-w-3xl mx-auto leading-relaxed">Computer science builder with a growing design practice. I combine interface design, visual thinking and frontend engineering to turn ideas into usable digital products.</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="#work" className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-7 py-3.5 rounded-lg font-semibold transition-colors hover-lift">
-              See My Work <ArrowRight size={18} />
-            </a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-dark-600 hover:border-primary-500 text-dark-200 hover:text-primary-400 px-7 py-3.5 rounded-lg font-semibold transition-colors hover-lift">
-              Download CV
-            </a>
+            <a href="#work" className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-7 py-3.5 rounded-lg font-semibold transition-colors hover-lift">See My Work <ArrowRight size={18} /></a>
+            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-dark-600 hover:border-primary-500 text-dark-200 hover:text-primary-400 px-7 py-3.5 rounded-lg font-semibold transition-colors hover-lift">View CV</a>
           </div>
 
           <div className="flex flex-wrap justify-center gap-3 mt-10 text-sm text-dark-400">
-            <span className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-800/60"><Palette size={16} /> UI / UX</span>
-            <span className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-800/60"><Code2 size={16} /> Frontend</span>
-            <span className="px-3 py-2 rounded-lg bg-dark-800/60">React · Next.js · TypeScript</span>
+            <span className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-800/70 border border-dark-700/60"><Palette size={16} /> UI / UX</span>
+            <span className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-800/70 border border-dark-700/60"><Code2 size={16} /> Frontend</span>
+            <span className="px-3 py-2 rounded-lg bg-dark-800/70 border border-dark-700/60">React · Next.js · TypeScript</span>
           </div>
         </div>
       </div>
 
-      <button onClick={scrollToWork} className="absolute bottom-8 left-1/2 -translate-x-1/2 text-dark-500 hover:text-primary-400 transition-colors animate-bounce" aria-label="Scroll to work">
-        <ArrowDown size={26} />
-      </button>
+      <button onClick={scrollToWork} className="absolute bottom-8 left-1/2 -translate-x-1/2 text-dark-500 hover:text-primary-400 transition-colors animate-bounce" aria-label="Scroll to selected work"><ArrowDown size={26} /></button>
     </section>
   )
 }
