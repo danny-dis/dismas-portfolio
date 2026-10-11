@@ -2,25 +2,25 @@
 
 ## Ishtar — portfolio and CV refresh
 
-- [x] Checked in; working on `feat/portfolio-cv-refresh` from current `origin/main`.
-- [x] Confirmed original working tree was clean and fast-forwarded only.
-- [x] Recovered education correction: expected graduation 2027.
-- [ ] Verify public project descriptions and links against source.
-- [ ] Update portfolio copy and project data without inventing client experience.
-- [ ] Rebuild a readable, reproducible PDF CV from repository-owned source.
-- [ ] Fix the dependency installation mismatch and verify clean installation/build.
-- [ ] Run regression, browser/mobile, and PDF checks.
-- [ ] Run change-impact review before committing.
-- [ ] Publish and read back exact remote targets; distinguish source publication from live deployment.
+- [x] Checked in on `feat/portfolio-cv-refresh` from current `origin/main`; original working tree clean.
+- [x] Recovered user education correction: expected graduation 2027.
+- [x] Verified public project descriptions and source links; evidence in `docs/PORTFOLIO-EVIDENCE.md`.
+- [x] Updated portfolio copy/project data without invented employment, benchmarks or customer claims.
+- [x] Rebuilt one-page, text-readable PDF and editable Markdown CV from `content/resume.json`.
+- [x] Corrected dependency lock and updated Next.js to 14.2.35 with Node 22 configured.
+- [x] Eight regression tests, CV generation, typecheck, lint and production build passed in GitHub Actions run 38146391612; all 19 static pages emitted.
+- [x] Locally rendered desktop/mobile homepage and featured cards; no horizontal overflow at 390px; mobile menu works.
+- [x] PDF rasterized/layout checked; seven clickable links; exact remote PDF hash matches delivered file.
+- [x] Ran GitNexus change analysis: failed because no usable portfolio index. Complete file/symbol diff reviewed manually; contact API unchanged. This is a limitation, not a passed graph analysis.
+- [x] Published and read back source/PDF in PR https://github.com/danny-dis/dismas-portfolio/pull/1.
+- [ ] Resolve Vercel preview failure using private build logs, then merge/deploy and read back production site/PDF.
+- [x] Checked out pending user authorization. Existing live site left unchanged.
 
-Scope: this repository and its public resume only. No unrelated repository edits or secret publication.
+## Execution limitations and publication blocker
 
-## Verification so far
+- Local clean `npm ci` failed with registry EIDLETIMEOUT and Windows cleanup EPERM; Linux exact-lock CI install succeeded.
+- Old installed Next 14.0.4 local production build timed out in page-data workers. It is not used to establish patched production build success; the locked Next 14.2.35 CI build is verified separately.
+- Local old-dependency dev rendering is only a visual check, not a security/build validation.
+- Vercel preview failed independently of green GitHub CI. No valid Vercel CLI credential was present; official CLI device login requested from user to access private deployment logs. Do not merge blindly or claim the website is updated live.
 
-- Eight content regression checks passed.
-- Standalone TypeScript check passed under Node 22.
-- One-page PDF generated and text/layout checked, with seven clickable links.
-- Correct npm lock generated; exact-lock clean install still in progress.
-- GitNexus `detect_changes` failed: portfolio is not indexed after worker-startup failures. Full file/symbol diff reviewed; no contact API changes.
-- Old-dependency local build compiled, but static worker timed out; clean locked build and remote CI still required.
-- Production deployment is not yet verified.
+Scope: this repository and CV delivery only. No unrelated repository edits, contact submissions, secret publication or destructive cleanup.
