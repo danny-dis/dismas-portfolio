@@ -14,7 +14,7 @@ export default function Footer() {
               Dismas Muriuki
             </h3>
             <p className="text-dark-300 mb-4 max-w-md">
-              Software engineer specializing in AI agent architectures, multi-provider LLM routing, blockchain voting platforms, and security tools. 16+ production-grade systems built independently.
+              Designer + coder in Kenya, building AI infrastructure, developer tools and usable interfaces. Explore the public source behind my work. Open to software, frontend and design-to-code opportunities.
             </p>
             <div className="flex space-x-4">
               <a

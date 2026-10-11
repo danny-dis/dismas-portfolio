@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://dismas.dev'
+  const baseUrl = 'https://dismas-portfolio.vercel.app'
   const routes = ['', '/about', '/projects', '/contact', '/blog']
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,

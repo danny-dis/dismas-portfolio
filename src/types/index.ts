@@ -7,6 +7,9 @@ export interface Project {
   githubUrl: string
   liveUrl?: string
   featured: boolean
+  features: string[]
+  sourceUrl: string
+  provenance: string
 }
 
 export interface BlogPost {

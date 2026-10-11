@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { ArrowDown, ArrowRight, Code2, Palette } from 'lucide-react'
 
-const typewriterTexts = ['Designer + Coder', 'UI/UX Designer', 'Creative Technologist', 'Frontend Developer']
+const typewriterTexts = ['Designer + Coder', 'Software Engineer', 'AI Systems Builder', 'Frontend Developer']
 
 export default function Hero() {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
@@ -50,7 +50,7 @@ export default function Hero() {
             <p className="text-xl md:text-2xl text-dark-300"><span className="text-primary-400 font-semibold">{currentText}</span><span className="animate-pulse" aria-hidden="true">|</span></p>
           </div>
 
-          <p className="text-lg md:text-xl text-dark-400 mb-10 max-w-3xl mx-auto leading-relaxed">Computer science builder with a growing design practice. I combine interface design, visual thinking and frontend engineering to turn ideas into usable digital products.</p>
+          <p className="text-lg md:text-xl text-dark-400 mb-10 max-w-3xl mx-auto leading-relaxed">I’m Dismas Muriuki Mutabari, a self-directed software builder in Kenya. I work on AI gateways, agent runtimes and developer tools, with React interfaces that make complex systems easier to use.</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href="#work" className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-7 py-3.5 rounded-lg font-semibold transition-colors hover-lift">See My Work <ArrowRight size={18} /></a>
@@ -60,7 +60,8 @@ export default function Hero() {
           <div className="flex flex-wrap justify-center gap-3 mt-10 text-sm text-dark-400">
             <span className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-800/70 border border-dark-700/60"><Palette size={16} /> UI / UX</span>
             <span className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-800/70 border border-dark-700/60"><Code2 size={16} /> Frontend</span>
-            <span className="px-3 py-2 rounded-lg bg-dark-800/70 border border-dark-700/60">React · Next.js · TypeScript</span>
+            <span className="px-3 py-2 rounded-lg bg-dark-800/70 border border-dark-700/60">TypeScript · Python · Rust · React</span>
+            <span className="px-3 py-2 rounded-lg bg-dark-800/70 border border-dark-700/60">Open to remote work · EAT / UTC+3</span>
           </div>
         </div>
       </div>

@@ -6,9 +6,9 @@ import Link from 'next/link'
 import { ArrowRight, Check, Code2, Palette, Sparkles } from 'lucide-react'
 
 const practiceAreas = [
-  ['Brand identity', 'Logo exploration, colour, typography and simple brand collateral.'],
-  ['Marketing graphics', 'Social and promotional layouts built around clear communication.'],
-  ['Print design', 'Poster, flyer, business-card and brochure exercises with print-aware layouts.'],
+  ['Interface clarity', 'Make configuration, task states and project context understandable.'],
+  ['Reusable systems', 'Separate gateways, runtimes and applications so each can evolve independently.'],
+  ['Evidence & documentation', 'Keep source links, limitations and reproducible setup instructions close to the work.'],
 ]
 
 export default function HomePage() {
@@ -49,8 +49,8 @@ export default function HomePage() {
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5 mb-12">
             <div>
               <p className="text-primary-400 font-semibold tracking-widest text-sm mb-3">SELECTED WORK</p>
-              <h2 className="text-3xl md:text-5xl font-bold text-dark-100 mb-3">Design thinking, shipped as software.</h2>
-              <p className="text-lg text-dark-400 max-w-2xl">A selection of real projects where product thinking, interface decisions and engineering meet.</p>
+              <h2 className="text-3xl md:text-5xl font-bold text-dark-100 mb-3">Interfaces, infrastructure and tools.</h2>
+              <p className="text-lg text-dark-400 max-w-2xl">Explore DMR-X, MOTE, Chimera and Drift: four independent projects spanning AI infrastructure, developer tooling and local-first applications.</p>
             </div>
             <Link href="/projects" className="inline-flex items-center gap-2 text-primary-400 hover:text-primary-300 font-semibold shrink-0">View all work <ArrowRight size={18} /></Link>
           </div>
@@ -63,9 +63,9 @@ export default function HomePage() {
       <section className="py-24 bg-dark-800/35 border-y border-dark-800/70">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-12">
-            <p className="text-primary-400 font-semibold tracking-widest text-sm mb-3">DESIGN PRACTICE</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-dark-100 mb-5">Building the visual-design side honestly.</h2>
-            <p className="text-lg text-dark-400 leading-relaxed">These are personal practice pieces, not claimed client work. I am using them to build a stronger foundation in branding, marketing and print design alongside my software work.</p>
+            <p className="text-primary-400 font-semibold tracking-widest text-sm mb-3">BUILDING PRACTICE</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-dark-100 mb-5">Clear interfaces. Explicit boundaries.</h2>
+            <p className="text-lg text-dark-400 leading-relaxed">My design practice is growing alongside real software projects. I focus on usable interfaces, understandable system boundaries and documentation that distinguishes implemented behavior from future plans.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-5">
             {practiceAreas.map(([title, description]) => (
@@ -73,7 +73,7 @@ export default function HomePage() {
                 <Sparkles className="text-primary-400 mb-4" size={22} />
                 <h3 className="font-semibold text-dark-100 mb-2">{title}</h3>
                 <p className="text-sm text-dark-400 leading-relaxed">{description}</p>
-                <span className="inline-block mt-5 text-xs text-dark-500 uppercase tracking-wider">Personal practice</span>
+                <span className="inline-block mt-5 text-xs text-dark-500 uppercase tracking-wider">How I approach the work</span>
               </article>
             ))}
           </div>
@@ -103,7 +103,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-primary-400 font-semibold tracking-widest text-sm mb-3">ABOUT</p>
           <h2 className="text-3xl md:text-4xl font-bold text-dark-100 mb-6">A coder learning to think visually — without leaving code behind.</h2>
-          <p className="text-lg text-dark-400 leading-relaxed mb-8">I completed my BSc Computer Science coursework at Murang’a University of Technology and expect to graduate in 2027. Most of my work has been software, especially AI and developer tools; I am expanding into design because I enjoy shaping how products look, feel and communicate.</p>
+          <p className="text-lg text-dark-400 leading-relaxed mb-8">BSc Computer Science candidate at Murang’a University of Technology — expected graduation 2027. My independent work spans AI infrastructure, developer tools and frontend applications. I am growing the design side because I care about how products look, feel and communicate.</p>
           <div className="flex flex-wrap justify-center gap-3">
             {['UI / UX', 'Frontend', 'TypeScript', 'React', 'Python', 'AI systems', 'Visual design', 'Fast learner'].map((item) => <span key={item} className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-dark-900 border border-dark-700 text-dark-300 text-sm"><Check size={15} className="text-primary-400" /> {item}</span>)}
           </div>
@@ -113,8 +113,8 @@ export default function HomePage() {
       <section className="py-28">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-primary-400 font-semibold tracking-widest text-sm mb-3">LET'S TALK</p>
-          <h2 className="text-4xl md:text-6xl font-bold text-dark-100 mb-5">Have a design problem to solve?</h2>
-          <p className="text-lg text-dark-400 mb-8">Bring me the problem. I can help think through the interface and build the product.</p>
+          <h2 className="text-4xl md:text-6xl font-bold text-dark-100 mb-5">Have something useful to build?</h2>
+          <p className="text-lg text-dark-400 mb-8">Open to remote software, frontend and design-to-code work. Based in Kenya, EAT / UTC+3, with daytime overlap with European teams.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3.5 rounded-lg font-semibold transition-colors hover-lift">Get In Touch</Link>
             <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="border border-dark-600 hover:border-primary-500 text-dark-200 hover:text-primary-400 px-8 py-3.5 rounded-lg font-semibold transition-colors hover-lift">View CV</a>

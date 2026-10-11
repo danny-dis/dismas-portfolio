@@ -15,9 +15,17 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Content regression tests
+        run: npm test
+      - name: Generate CV
+        run: npm run resume
+      - name: Type check
+        run: npm run typecheck
+      - name: Lint
+        run: npm run lint
       - name: Build
         run: npm run build

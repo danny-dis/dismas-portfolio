@@ -7,22 +7,22 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'], display: 'swap', variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://dismas.dev'),
+  metadataBase: new URL('https://dismas-portfolio.vercel.app'),
   title: { default: 'Dismas Muriuki — Designer + Coder', template: '%s | Dismas Muriuki' },
-  description: 'Dismas Muriuki is a designer and coder combining UI/UX, visual thinking and frontend engineering to build digital products.',
+  description: 'Dismas Muriuki Mutabari — software builder in Kenya working on AI infrastructure, developer tools and responsive interfaces. Explore DMR-X, MOTE, Chimera and Drift.',
   keywords: ['Dismas Muriuki', 'Designer', 'Coder', 'UI/UX', 'Frontend Developer', 'Creative Technologist', 'TypeScript', 'React', 'Kenya'],
-  authors: [{ name: 'Dismas Muriuki', url: 'https://dismas.dev' }],
+  authors: [{ name: 'Dismas Muriuki', url: 'https://dismas-portfolio.vercel.app' }],
   creator: 'Dismas Muriuki',
-  alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://dismas.dev',
+    url: 'https://dismas-portfolio.vercel.app',
     title: 'Dismas Muriuki — Designer + Coder',
     description: 'Designing digital experiences and building them too — UI/UX, frontend engineering and creative technology.',
     siteName: 'Dismas Muriuki Portfolio',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Dismas Muriuki — Designer + Coder' }],
   },
-  twitter: { card: 'summary_large_image', title: 'Dismas Muriuki — Designer + Coder', description: 'UI/UX, frontend engineering and creative technology.' },
+  twitter: { card: 'summary_large_image', title: 'Dismas Muriuki — Designer + Coder', description: 'AI infrastructure, developer tools and responsive interfaces.', images: ['/og-image.png'] },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true } },
 }
 

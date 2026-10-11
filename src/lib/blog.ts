@@ -15,6 +15,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         const fullPath = path.join(contentDirectory, fileName)
         const fileContents = fs.readFileSync(fullPath, 'utf8')
         const { data, content } = matter(fileContents)
+        if (data.published !== true) return null
 
         return {
           slug,
@@ -26,7 +27,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         }
       })
 
-    return allPostsData.sort((a, b) => (a.date < b.date ? 1 : -1))
+    return allPostsData.filter((post): post is BlogPost => post !== null).sort((a, b) => (a.date < b.date ? 1 : -1))
   } catch (error) {
     console.error('Error reading blog posts:', error)
     return []
@@ -34,10 +35,12 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
 }
 
 export async function getBlogPostBySlug(slug: string): Promise<BlogPost | null> {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)) return null
   try {
     const fullPath = path.join(contentDirectory, `${slug}.mdx`)
     const fileContents = fs.readFileSync(fullPath, 'utf8')
     const { data, content } = matter(fileContents)
+    if (data.published !== true) return null
 
     return {
       slug,

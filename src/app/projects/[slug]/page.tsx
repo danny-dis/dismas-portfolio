@@ -68,6 +68,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           <p className="text-xl text-dark-300 leading-relaxed mb-8">
             {project.description}
           </p>
+          <p className="text-sm text-primary-400 mb-6">{project.provenance}</p>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-4">
@@ -88,7 +89,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                 className="inline-flex items-center space-x-2 border border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 hover-lift"
               >
                 <ExternalLink size={20} />
-                <span>Live Demo</span>
+                <span>Project Website</span>
               </a>
             )}
           </div>
@@ -114,7 +115,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                   Key Features
                 </h3>
                 <div className="space-y-3">
-                  {getProjectFeatures(project.id).map((feature, index) => (
+                  {project.features.map((feature, index) => (
                     <div key={index} className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-primary-400 rounded-full mt-2 flex-shrink-0"></div>
                       <p className="text-dark-300">{feature}</p>
@@ -168,21 +169,21 @@ export default function ProjectPage({ params }: ProjectPageProps) {
                     className="flex items-center space-x-2 text-dark-300 hover:text-primary-400 transition-colors"
                   >
                     <ExternalLink size={18} />
-                    <span>Live Demo</span>
+                    <span>Project Website</span>
                   </a>
                 )}
               </div>
             </div>
 
-            {/* Philosophy */}
+            {/* Evidence and provenance */}
             <div className="glass rounded-lg p-6">
               <h3 className="text-lg font-semibold text-dark-100 mb-4">
-                Philosophy
+                Project Context
               </h3>
               <p className="text-dark-300 text-sm">
-                Built with modularity, decentralization, and FOSS principles in mind. 
-                Designed to be self-hosted and contribute to a peer-to-peer future.
+                Explore the implementation, project status and origin in the linked repository. Independent projects, maintained derivatives and architecture work are labeled separately.
               </p>
+              <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 text-primary-400 hover:text-primary-300 text-sm">Inspect implementation →</a>
             </div>
           </div>
         </div>
@@ -225,64 +226,4 @@ export default function ProjectPage({ params }: ProjectPageProps) {
       </div>
     </div>
   )
-}
-
-function getProjectFeatures(projectId: string): string[] {
-  const features: Record<string, string[]> = {
-    'argus': [
-      '244+ Python files across 28 specialist agent folders',
-      'Committed exploitation loop: fingerprint → match CVE/PoC → develop → run → verify',
-      'Parallel fuzzing-to-exploit workshop across 6 engines',
-      'Operational severity model grading by demonstrated impact',
-      '8-phase MasterAgent lifecycle + AgentBus dispatch'
-    ],
-    'chimera': [
-      'Draft → Verify → Challenge → Synthesize pipeline',
-      'Cost-aware routing with configurable caps (per-task, per-session, per-day)',
-      'Agent Relay Racing: monitors context fill, triggers graceful handoff',
-      'Worktree isolation for parallel agent execution',
-      'DAG-based declarative workflow engine, VS Code chat panel, LSP intelligence'
-    ],
-    'dmr-x': [
-      'Single gateway for OpenAI, Anthropic, and Gemini wire formats',
-      'Routes to 57+ provider adapters with dynamic scoring',
-      'Thompson Sampling bandit for dynamic routing with fallback chains',
-      'Agent-as-a-Service runtime: durable sessions with resume/retry',
-      'MCP server with stdio/SSE/HTTP transports'
-    ],
-    'noesis': [
-      'Two-tier memory: agent-local + shared temporal knowledge graph',
-      'Content-addressed object store for immutable raw evidence',
-      'Trust-scoring and deduplication across raw agent transcripts',
-      'Python insight workers for chunking, embedding, extraction, graphification',
-      'MCP adapter serving scoped, cited Context Slices to agents'
-    ],
-    'votechain': [
-      'VotingFactory + Voting contracts (Solidity 0.8.24, OpenZeppelin v5, Foundry)',
-      'Multi-tenant: each organization gets isolated smart-contract elections',
-      'Privy embedded wallet + MetaMask support for voter authentication',
-      'Results indexing into Postgres with live SSE streaming to React frontend',
-      'Base L2 deployment for low gas costs'
-    ],
-    'ghost-factory': [
-      'Modular toolchain abstraction for multi-language, multi-platform builds',
-      'Targets C, C++, Rust, Go, Java, Python, Web',
-      'Supports Windows/Linux/macOS/Docker/ISO/firmware',
-      '"Ghost-ify" pipeline for automated repository transformation'
-    ],
-    'escrowbot': [
-      'Platform-agnostic core with adapters for Telegram, Slack, Discord',
-      '2-of-3 multisig + HTLC dispute resolution',
-      'Deterministic escrow — never controlled by the operator',
-      'Smart contract-enforced deposits, release, and refunds'
-    ]
-  }
-
-  return features[projectId] || [
-    'Open source and freely available',
-    'Built with modern technologies',
-    'Designed for scalability and performance',
-    'Community-driven development',
-    'Comprehensive documentation'
-  ]
 }

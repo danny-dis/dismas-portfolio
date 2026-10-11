@@ -1,0 +1,75 @@
+{
+  "name": "Dismas Muriuki Mutabari",
+  "title": "Software Engineer | Design-minded Builder",
+  "email": "muriukidismas9@gmail.com",
+  "location": "Kenya | EAT / UTC+3 | Open to remote opportunities",
+  "github": "https://github.com/danny-dis",
+  "portfolio": "https://dismas-portfolio.vercel.app",
+  "summary": "Self-directed software builder working across AI infrastructure, developer tools and responsive interfaces. Independent projects combine TypeScript, Python, Rust and React, with an emphasis on modular architecture, explicit permissions and source-reviewable work. Growing a UI/UX practice alongside engineering; seeking software, frontend and design-to-code opportunities.",
+  "skills": [
+    {
+      "label": "Languages",
+      "text": "TypeScript, JavaScript, Python, Rust, SQL"
+    },
+    {
+      "label": "Applications",
+      "text": "React, Next.js, Vite, Tailwind CSS, FastAPI, Node.js, Bun"
+    },
+    {
+      "label": "AI & systems",
+      "text": "LLM/provider integration, agent tool loops, MCP, SQLite, REST APIs"
+    },
+    {
+      "label": "Workflow",
+      "text": "Git, GitHub Actions, Docker, Linux, automated tests, documentation"
+    },
+    {
+      "label": "Design practice",
+      "text": "Figma, wireframing, prototyping, responsive layouts (developing)"
+    }
+  ],
+  "projects": [
+    {
+      "id": "dmr-x",
+      "title": "DMR-X — AI Gateway & Adaptive Routing",
+      "url": "https://github.com/danny-dis/dmr-X",
+      "stack": "TypeScript / Bun / React / Vite / MCP",
+      "bullets": [
+        "Developing a local-first gateway that separates provider/model routing from application orchestration.",
+        "Work spans provider management, a React interface, configurable routing and fallback paths."
+      ]
+    },
+    {
+      "id": "mote",
+      "title": "MOTE — Minimal Agent Execution Engine",
+      "url": "https://github.com/danny-dis/MOTE",
+      "stack": "Rust / Python / TypeScript / YAML / JSONL",
+      "bullets": [
+        "Built a compact model-and-tool execution engine with capability grants, fallback and bounded runs.",
+        "Provides a library/CLI and a separate bridge for application-owned Python and TypeScript tools."
+      ]
+    },
+    {
+      "id": "chimera",
+      "title": "Chimera — Multi-Agent Coding Workspace",
+      "url": "https://github.com/danny-dis/chimera",
+      "stack": "TypeScript / Node.js / React / Git worktrees",
+      "bullets": [
+        "Developing a modular coding-agent workspace with solo, duo and trio coordinator implementations.",
+        "Work covers provider integration, tool loops, context handling, sessions and developer interfaces."
+      ]
+    },
+    {
+      "id": "drift",
+      "title": "Drift — Local-First Thinking Workspace",
+      "url": "https://github.com/danny-dis/Drift",
+      "stack": "Python / FastAPI / React / TypeScript / SQLite",
+      "bullets": [
+        "Built a local workspace for ideas, repository context and research reports with retained sources.",
+        "Pairs a React dashboard with explicit task review, local persistence and bounded model calls."
+      ]
+    }
+  ],
+  "education": "BSc Computer Science candidate — Murang'a University of Technology; expected graduation 2027.",
+  "additional": "Open to software, frontend and design-to-code opportunities. Based in Kenya, with daytime overlap with European teams and a self-directed, documentation-focused working style."
+}
