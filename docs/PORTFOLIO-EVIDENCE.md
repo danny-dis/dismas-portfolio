@@ -1,0 +1,46 @@
+# Portfolio evidence and content boundaries
+
+Reviewed for the October 2026 portfolio/CV refresh. Descriptions are based on public repository documentation and selected implementation files; this is not an execution audit of every project.
+
+## Featured independent work
+
+- **DMR-X:** https://github.com/danny-dis/dmr-X
+  - Provider interface: `apps/ui/src/pages/Providers.tsx`.
+  - Gateway, routing, adapter and runtime boundaries are documented in the repository README and canonical architecture documents.
+  - No adapter-count, benchmark, revenue, customer or production-readiness claims are made in the refreshed CV.
+- **MOTE:** https://github.com/danny-dis/MOTE (default branch `production-ready`).
+  - Capability code: `src/capability.rs`; bridge CLI: `src/bin/mote-bridge.rs`.
+  - The README distinguishes execution from application-owned approvals, scheduling and storage. Capability grants are not an OS sandbox.
+- **Chimera:** https://github.com/danny-dis/chimera
+  - Coordinators: `packages/chimera-core/src/coordinator/solo-executor.ts`, `duo-executor.ts`, `trio-executor.ts`.
+  - The package tree includes context, session, isolation, terminal, VS Code and workflow packages.
+  - Feature descriptions do not imply a marketplace release or a hosted service.
+- **Drift:** https://github.com/danny-dis/Drift
+  - `drift/ui_api.py` defines idea/project/task interfaces; `drift/organism.py` manages local idea/project state and notes.
+  - The README distinguishes retained research/citation checks from independent factual verification and implementation of proposed code changes.
+
+## Other public work and attribution
+
+- **G.L.U.E.:** https://github.com/danny-dis/G.L.U.E — its README explicitly identifies an architecture/specification project. Federation design is not presented as a running production platform.
+- **Letty:** https://github.com/danny-dis/letty — maintained derivative of Mario Zechner's Pi agent, with upstream attribution. Not presented as original authorship of the whole system.
+- **Decentralized Voting:** https://github.com/danny-dis/Decentralized-Voting-System — GitHub identifies it as a fork. The public README/source uses Solidity, HTML/JavaScript, FastAPI, MySQL and Truffle, plus browser-local demonstrations. The previous Base L2 / Privy / Foundry / PostgreSQL SaaS description did not match this public repository.
+
+## Personal facts
+
+- Professional name: Dismas Muriuki Mutabari.
+- Email and GitHub are taken from the user's existing portfolio and CV.
+- Kenya, EAT / UTC+3.
+- BSc Computer Science candidate at Murang'a University of Technology; expected graduation 2027, based on the user's reported delay. Do not claim completed coursework or graduation without confirmation.
+- Independent project experience is separate from formal employment or paid client engagements. No invented employer history, testimonials, years-of-experience figure or design-client work.
+
+## Publication safety
+
+Five earlier model-news articles contain unsupported release, benchmark or ranking claims. Their text is preserved and their frontmatter sets `published: false`. The blog loader requires explicit publication and returns no post for an unpublished slug.
+
+The public note `ai-system-boundaries.mdx` links the reviewed code and states the limits of its claims.
+
+## Tooling limitation
+
+GitNexus indexing failed during native worker startup under Node 26, 24 and an isolated Node 22 runtime. Upstream impact commands were attempted before component/function edits but timed out. Source-reference review identified the home-page component dependencies, shared footer/layout, project-list/detail consumers and blog-list/detail consumers. This is a limited fallback, not a successful GitNexus graph analysis.
+
+The update is constrained to this portfolio, its CV/content, dependency/install repair and CI checks. The contact API and other project implementations are unchanged. A change-detection attempt plus explicit Git diff review is required before committing; record actual results in the agent checklist.

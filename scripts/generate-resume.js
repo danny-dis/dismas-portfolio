@@ -1,138 +1,48 @@
-const fs = require('fs');
-const path = require('path');
-const PDFDocument = require('pdfkit');
-const { marked } = require('marked');
-
-const mdPath = path.join(__dirname, '..', '..', 'Dismas_Muriuki_CV.md');
-const pdfPath = path.join(__dirname, '..', 'public', 'resume.pdf');
-
-const md = fs.readFileSync(mdPath, 'utf8');
-const tokens = marked.lexer(md);
-
-const doc = new PDFDocument({ size: 'A4', margin: 50 });
-const stream = fs.createWriteStream(pdfPath);
-doc.pipe(stream);
-
-// Parse inline markdown
-function parseInline(elements, opts = {}) {
-  if (!elements) return;
-  for (const el of elements) {
-    switch (el.type) {
-      case 'text':
-      case 'codespan':
-      case 'strong':
-      case 'em':
-      case 'del':
-      case 'escape': {
-        let text = el.text;
-        const isStrong = el.type === 'strong';
-        const isEm = el.type === 'em';
-        const isCode = el.type === 'codespan';
-        if (isStrong) doc.font('Helvetica-Bold');
-        if (isEm) doc.font('Helvetica-Oblique');
-        if (isCode) doc.font('Courier');
-        doc.text(text, { continued: true });
-        if (isStrong || isEm || isCode) doc.font('Helvetica');
-        break;
-      }
-      case 'link':
-        doc.text(el.text, { continued: true, link: el.href });
-        break;
-      default:
-        if (el.text) doc.text(el.text, { continued: true });
-    }
-  }
+const fs = require('node:fs')
+const path = require('node:path')
+const PDFDocument = require('pdfkit')
+const cv = JSON.parse(fs.readFileSync(path.join(__dirname, '../content/resume.json'), 'utf8'))
+const output = path.join(__dirname, '../public/resume.pdf')
+const doc = new PDFDocument({ size: 'A4', margin: 42, bufferPages: true, info: { Title: `${cv.name} - CV`, Author: cv.name, Subject: 'Independent project experience: software, AI systems and frontend' } })
+const stream = fs.createWriteStream(output)
+doc.pipe(stream)
+const width = doc.page.width - 84
+const teal = '#0f766e'
+const ink = '#172033'
+function paragraph(text, options = {}) {
+  doc.font('Helvetica').fontSize(9.1).fillColor(ink).text(text, { width, lineGap: 2, ...options })
 }
-
-let afterTitle = false;
-
-for (const token of tokens) {
-  switch (token.type) {
-    case 'heading': {
-      if (token.depth === 1) {
-        doc.font('Helvetica-Bold').fontSize(20).text(token.text, { align: 'center' });
-        doc.moveDown(0.3);
-        afterTitle = true;
-      } else if (token.depth === 2) {
-        doc.moveDown(0.8);
-        doc.font('Helvetica-Bold').fontSize(13).fillColor('#0d9488');
-        doc.text(token.text.toUpperCase());
-        doc.fillColor('black').font('Helvetica');
-        doc.moveTo(doc.x, doc.y + 2).lineTo(545, doc.y + 2).strokeColor('#0d9488').stroke();
-        doc.moveDown(0.4);
-      } else if (token.depth === 3) {
-        doc.moveDown(0.5);
-        doc.font('Helvetica-Bold').fontSize(11);
-        doc.fillColor('#1e293b');
-        doc.text(token.text);
-        doc.fillColor('black').font('Helvetica');
-        doc.moveDown(0.2);
-      } else {
-        doc.moveDown(0.4);
-        doc.font('Helvetica-Bold').fontSize(10).text(token.text);
-        doc.font('Helvetica');
-        doc.moveDown(0.2);
-      }
-      break;
-    }
-
-    case 'paragraph': {
-      // Check if it's a contact line with pipes
-      const text = token.text || '';
-      if (text.includes('📧') && text.includes('|')) {
-        doc.font('Helvetica').fontSize(9);
-        doc.text(text.replace(/\|/g, '  •  '), { align: 'center' });
-        doc.moveDown(0.3);
-      } else {
-        doc.font('Helvetica').fontSize(10);
-        const inline = marked.parseInline(text);
-        // Simple approach: strip HTML tags for now but handle links
-        const lines = text.split(/<br\s*\/?>/);
-        lines.forEach((line, i) => {
-          const clean = line.replace(/<[^>]+>/g, '');
-          doc.text(clean, { align: 'left' });
-          if (i < lines.length - 1) doc.moveDown(0.1);
-        });
-        doc.moveDown(0.3);
-      }
-      break;
-    }
-
-    case 'list': {
-      doc.font('Helvetica').fontSize(10);
-      token.items.forEach((item, idx) => {
-        const bullet = item.task ? (item.checked ? '☑' : '☐') : '•';
-        doc.text(`  ${bullet} `, { continued: true });
-        // Parse inline items
-        parseInline(item.tokens);
-        if (idx < token.items.length - 1) doc.moveDown(0.15);
-      });
-      doc.moveDown(0.3);
-      break;
-    }
-
-    case 'hr': {
-      doc.moveDown(0.3);
-      doc.moveTo(doc.x, doc.y).lineTo(545, doc.y).strokeColor('#e2e8f0').stroke();
-      doc.moveDown(0.3);
-      break;
-    }
-
-    case 'blockquote': {
-      doc.moveDown(0.2);
-      doc.font('Helvetica-Oblique').fontSize(9).fillColor('#475569');
-      const text = token.text.replace(/\n/g, ' ').replace(/\s+/g, ' ').trim();
-      doc.text(text, { indent: 20 });
-      doc.fillColor('black').font('Helvetica');
-      doc.moveDown(0.3);
-      break;
-    }
-
-    default:
-      break;
-  }
+function section(title) {
+  doc.moveDown(0.55)
+  doc.font('Helvetica-Bold').fontSize(10).fillColor(teal).text(title.toUpperCase(), { width, characterSpacing: 0.7 })
+  doc.moveTo(42, doc.y + 3).lineTo(doc.page.width - 42, doc.y + 3).strokeColor('#cbd5e1').lineWidth(0.5).stroke()
+  doc.moveDown(0.55)
 }
-
-doc.end();
-stream.on('finish', () => console.log('PDF created:', pdfPath, '(' + fs.statSync(pdfPath).size + ' bytes)'));
-stream.on('error', (e) => console.error('Error:', e));
+doc.font('Helvetica-Bold').fontSize(23).fillColor(ink).text(cv.name, { width })
+doc.moveDown(0.2)
+doc.font('Helvetica').fontSize(11).fillColor(teal).text(cv.title, { width })
+doc.moveDown(0.35)
+paragraph(cv.location, { lineGap: 1 })
+paragraph(cv.email, { link: `mailto:${cv.email}`, lineGap: 1 })
+paragraph(cv.github, { link: cv.github, lineGap: 1 })
+paragraph(cv.portfolio, { link: cv.portfolio, lineGap: 1 })
+section('Profile')
+paragraph(cv.summary)
+section('Skills')
+for (const skill of cv.skills) paragraph(`${skill.label}: ${skill.text}`, { lineGap: 1 })
+section('Selected independent projects')
+for (const project of cv.projects) {
+  doc.font('Helvetica-Bold').fontSize(9.8).fillColor(ink).text(project.title, { width })
+  doc.font('Helvetica').fontSize(8).fillColor(teal).text(project.url, { width, link: project.url, lineGap: 1 })
+  paragraph(project.bullets.map(b => `• ${b}`).join('\n'), { lineGap: 1 })
+  doc.font('Helvetica-Oblique').fontSize(8).fillColor('#475569').text(project.stack, { width })
+  doc.moveDown(0.45)
+}
+section('Education & availability')
+paragraph(cv.education)
+paragraph(cv.additional, { lineGap: 1 })
+const pages = doc.bufferedPageRange()
+if (pages.count !== 1) throw new Error(`CV must be one page, got ${pages.count}; adjust spacing before publishing`)
+doc.end()
+stream.on('finish', () => console.log(`CV generated: ${output} (${fs.statSync(output).size} bytes; 1 page)`))
+stream.on('error', error => { console.error(error); process.exitCode = 1 })

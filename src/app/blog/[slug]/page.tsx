@@ -47,7 +47,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     notFound()
   }
 
-  const shareUrl = `https://dismas.dev/blog/${post.slug}`
+  const shareUrl = `https://dismas-portfolio.vercel.app/blog/${post.slug}`
 
   return (
     <div className="pt-32 pb-20">
@@ -108,8 +108,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 Dismas Muriuki
               </h3>
               <p className="text-dark-300 mb-4">
-                Backend dev & DB junkie — a strong believer in peer-to-peer technology and blockchain tech. 
-                I build dependable systems and mentor junior devs. I love coffee and old cars.
+                Designer + coder in Kenya, building AI infrastructure, developer tools and usable interfaces. I share source-linked notes from my independent project work.
               </p>
               <div className="flex space-x-4">
                 <Link

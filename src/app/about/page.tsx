@@ -1,51 +1,93 @@
 import { Metadata } from 'next'
-import { MapPin, Code2, Heart, Layers3, Palette } from 'lucide-react'
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'About Dismas Muriuki — a designer and coder combining UI/UX, frontend engineering and creative technology.',
+  description:
+    'Dismas Muriuki Mutabari, a software builder in Kenya studying computer science and building AI tools and interfaces.',
 }
 
 export default function AboutPage() {
   return (
-    <div className="pt-32 pb-24">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="max-w-3xl mb-16">
-          <p className="text-primary-400 font-semibold tracking-widest text-sm mb-3">ABOUT ME</p>
-          <h1 className="text-4xl md:text-6xl font-bold text-dark-100 mb-6">Designer + coder, still very much a builder.</h1>
-          <p className="text-xl text-dark-400 leading-relaxed">I started with code, discovered how much interface and visual decisions affect a product, and am deliberately building both sides together.</p>
-        </header>
-
-        <div className="space-y-8">
-          <section className="glass rounded-2xl p-8 md:p-10">
-            <div className="flex items-center gap-3 mb-6"><MapPin className="text-primary-400" size={24} /><h2 className="text-2xl font-semibold text-dark-100">Where I come from</h2></div>
-            <div className="prose prose-lg max-w-none">
-              <p>I grew up in Meru County, Kenya. My route into technology was practical and self-directed: I first ran Linux through Termux on an Android phone, then moved to a laptop and kept learning by building.</p>
-              <p>I completed my BSc Computer Science coursework at Murang’a University of Technology and expect to graduate in 2027.</p>
-            </div>
+    <div className="site-width inner-page">
+      <header className="page-header">
+        <p className="eyebrow">ABOUT / DISMAS MURIUKI MUTABARI</p>
+        <h1>
+          I got here by
+          <br />
+          figuring things out.
+        </h1>
+        <p className="copy">
+          I’m a developer from Meru County, Kenya. I started with Linux on an
+          Android phone, running it through Termux. A laptop came later. The
+          curiosity was already there.
+        </p>
+      </header>
+      <div className="about-grid">
+        <div className="about-copy">
+          <section className="story-section">
+            <h2>What keeps me building</h2>
+            <p>
+              I’m interested in software I can understand and control. That
+              leads me toward open source, self-hosted tools and systems whose
+              parts can be used independently.
+            </p>
+            <p>
+              My recent work is mostly around AI: routing requests in DMR-X,
+              running bounded tool loops in MOTE, coordinating coding agents in
+              Chimera, and keeping research and project ideas in Drift.
+            </p>
+            <Link href="/projects" className="text-link">
+              Look through the projects{' '}
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </Link>
           </section>
-
-          <section className="grid md:grid-cols-2 gap-6">
-            <div className="glass rounded-2xl p-8"><Code2 className="text-primary-400 mb-5" size={26} /><h2 className="text-xl font-semibold text-dark-100 mb-3">Engineering foundation</h2><p className="text-dark-400 leading-relaxed">Most of my work has been software: AI systems, developer tools, frontend applications, distributed ideas and infrastructure. I enjoy understanding how the pieces work underneath.</p></div>
-            <div className="glass rounded-2xl p-8"><Palette className="text-primary-400 mb-5" size={26} /><h2 className="text-xl font-semibold text-dark-100 mb-3">Growing the design side</h2><p className="text-dark-400 leading-relaxed">I am building practical UI/UX and visual-design experience through interface work and personal exercises in branding, marketing graphics and print design.</p></div>
+          <section className="story-section">
+            <h2>Learning the interface side</h2>
+            <p>
+              The backend is only part of the work. I’m also developing my UI/UX
+              practice through responsive React interfaces, component design and
+              clearer task flows. I care about whether someone can tell what a
+              tool is doing and what they should do next.
+            </p>
           </section>
-
-          <section className="glass rounded-2xl p-8 md:p-10">
-            <div className="flex items-center gap-3 mb-8"><Layers3 className="text-primary-400" size={24} /><h2 className="text-2xl font-semibold text-dark-100">How I think about products</h2></div>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                ['Clarity', 'A product should make its purpose and next action understandable.'],
-                ['Modularity', 'Reusable components make systems easier to evolve and recombine.'],
-                ['Ownership', 'I am interested in open, self-hostable technology and user control.'],
-                ['Learning by building', 'I learn fastest by studying real systems, experimenting and shipping working pieces.'],
-              ].map(([title, body]) => <div key={title}><h3 className="text-lg font-semibold text-primary-400 mb-2">{title}</h3><p className="text-dark-400 leading-relaxed">{body}</p></div>)}
-            </div>
+        </div>
+        <div>
+          <section className="story-section">
+            <h2>Education</h2>
+            <p className="copy">
+              BSc Computer Science at Murang’a University of Technology, with
+              expected graduation 2027.
+            </p>
           </section>
-
-          <section className="glass rounded-2xl p-8 md:p-10">
-            <div className="flex items-center gap-3 mb-6"><Heart className="text-primary-400" size={24} /><h2 className="text-2xl font-semibold text-dark-100">Beyond the work</h2></div>
-            <div className="grid md:grid-cols-2 gap-6 text-dark-400">
-              <p>☕ Coffee, especially during long building sessions.</p><p>🚗 Old cars and the craftsmanship behind them.</p><p>🎓 Sharing what I learn with other developers.</p><p>🔒 Privacy, security and technology that gives people more control.</p>
+          <section className="story-section">
+            <h2>Away from the keyboard</h2>
+            <p className="copy">
+              Usually music, especially 90s R&amp;B, or a PUBG session. I also
+              spend time looking through open-source projects to see how other
+              people solve problems.
+            </p>
+          </section>
+          <section className="story-section">
+            <h2>Work together</h2>
+            <p className="copy">
+              I’m open to remote software and frontend opportunities,
+              design-to-code work and open-source collaboration. I’m based in
+              Kenya, UTC+3.
+            </p>
+            <div className="link-row mt-6">
+              <Link href="/contact" className="button button-primary">
+                Get in touch
+              </Link>
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button"
+              >
+                Read my CV ↗
+              </a>
             </div>
           </section>
         </div>

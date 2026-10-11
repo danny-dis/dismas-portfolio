@@ -1,66 +1,111 @@
 'use client'
 
 import Link from 'next/link'
-import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
+import { useState, useEffect, useRef } from 'react'
 import { Menu, X } from 'lucide-react'
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
   { name: 'Work', href: '/projects' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'About', href: '/about' },
+  { name: 'Notes', href: '/blog' },
   { name: 'Contact', href: '/contact' },
 ]
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-
+  const pathname = usePathname()
+  const toggle = useRef<HTMLButtonElement>(null)
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    if (!isOpen) return
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        setIsOpen(false)
+        toggle.current?.focus()
+      }
+    }
+    document.addEventListener('keydown', closeOnEscape)
+    return () => document.removeEventListener('keydown', closeOnEscape)
+  }, [isOpen])
+  useEffect(() => {
+    setIsOpen(false)
+  }, [pathname])
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass' : 'bg-transparent'}`}>
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
-          <Link href="/" className="text-xl font-bold text-dark-100 hover:text-primary-400 transition-colors">
-            Dismas<span className="text-primary-400">.</span>
-          </Link>
-
-          <div className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link key={item.name} href={item.href} className="text-dark-200 hover:text-primary-400 transition-colors duration-200 font-medium">
-                {item.name}
-              </Link>
-            ))}
-            <a href="https://github.com/danny-dis" target="_blank" rel="noopener noreferrer" className="text-dark-300 hover:text-primary-400 transition-colors" aria-label="GitHub">
-              GitHub
-            </a>
-          </div>
-
-          <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 rounded-md text-dark-200 hover:text-primary-400 hover:bg-dark-800 transition-colors" aria-label="Toggle menu">
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {isOpen && (
-          <div className="md:hidden pb-4">
-            <div className="px-2 pt-2 pb-3 space-y-1 glass rounded-lg mt-2">
+    <>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+      <header className="site-header">
+        <div className="site-width">
+          <nav aria-label="Main navigation" className="header-inner">
+            <Link
+              href="/"
+              className="wordmark"
+              aria-label="Dismas Muriuki, home"
+            >
+              dismas<span>.</span>
+            </Link>
+            <div className="desktop-nav">
               {navigation.map((item) => (
-                <Link key={item.name} href={item.href} className="block px-3 py-2 text-dark-200 hover:text-primary-400 hover:bg-dark-800 rounded-md transition-colors" onClick={() => setIsOpen(false)}>
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={
+                    pathname?.startsWith(item.href) ? 'page' : undefined
+                  }
+                >
                   {item.name}
                 </Link>
               ))}
-              <a href="https://github.com/danny-dis" target="_blank" rel="noopener noreferrer" className="block px-3 py-2 text-dark-200 hover:text-primary-400 hover:bg-dark-800 rounded-md transition-colors">
-                GitHub
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+                CV ↗
               </a>
             </div>
-          </div>
-        )}
-      </nav>
-    </header>
+            <button
+              ref={toggle}
+              onClick={() => setIsOpen(!isOpen)}
+              className="menu-toggle"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation"
+            >
+              {isOpen ? (
+                <X size={24} aria-hidden="true" />
+              ) : (
+                <Menu size={24} aria-hidden="true" />
+              )}
+            </button>
+          </nav>
+          <nav
+            id="mobile-navigation"
+            aria-label="Mobile navigation"
+            className="mobile-nav md:hidden"
+            hidden={!isOpen}
+          >
+            {navigation.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                aria-current={
+                  pathname?.startsWith(item.href) ? 'page' : undefined
+                }
+              >
+                {item.name}
+              </Link>
+            ))}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
+            >
+              Read my CV ↗
+            </a>
+          </nav>
+        </div>
+      </header>
+    </>
   )
 }

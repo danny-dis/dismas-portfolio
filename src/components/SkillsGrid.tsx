@@ -6,7 +6,7 @@ const groups = [
   {
     title: 'Design',
     intro: 'Turning ideas into clear, usable visual experiences.',
-    items: ['UI / UX', 'Wireframing', 'Prototyping', 'Visual hierarchy', 'Typography fundamentals', 'Layout & colour fundamentals', 'Design systems', 'Figma', 'Canva (learning)'],
+    items: ['UI / UX (developing)', 'Wireframing', 'Prototyping', 'Visual hierarchy', 'Responsive layouts', 'Component design', 'Figma', 'Canva (learning)'],
   },
   {
     title: 'Frontend',
@@ -16,12 +16,12 @@ const groups = [
   {
     title: 'Engineering',
     intro: 'Building the systems behind the experience.',
-    items: ['Python', 'Node.js', 'Rust', 'PostgreSQL', 'SQLite', 'REST / GraphQL', 'Git / GitHub', 'Docker', 'Linux'],
+    items: ['Python', 'Node.js / Bun', 'Rust', 'FastAPI', 'SQLite', 'REST APIs', 'Git / GitHub', 'Docker', 'Linux'],
   },
   {
     title: 'AI & Product',
     intro: 'Working across modern AI and product infrastructure.',
-    items: ['AI agents', 'LLM routing', 'MCP', 'Blockchain', 'Smart contracts', 'Security research', 'Product thinking'],
+    items: ['AI agents', 'LLM routing', 'Provider integration', 'MCP', 'Tool execution', 'Capability boundaries', 'Product thinking'],
   },
 ]
 
@@ -40,7 +40,7 @@ export default function SkillsGrid() {
           <p className="text-primary-400 font-semibold mb-3">THE TOOLKIT</p>
           <h2 className="text-3xl md:text-4xl font-bold text-dark-100 mb-4">Design meets engineering.</h2>
           <p className="text-lg text-dark-400 max-w-2xl mx-auto">
-            I am strongest where visual decisions and technical implementation meet. I am building my graphic-design practice while bringing an established software-engineering foundation.
+            My project work centers on TypeScript, Python, Rust and React. I bring those tools together with responsive interfaces and a growing UI/UX practice.
           </p>
         </div>
 

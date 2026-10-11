@@ -7,6 +7,10 @@ export interface Project {
   githubUrl: string
   liveUrl?: string
   featured: boolean
+  features: string[]
+  sourceUrl: string
+  provenance: string
+  story?: { problem: string; decision: string; scope: string }
 }
 
 export interface BlogPost {
@@ -26,6 +30,18 @@ export interface ContactFormData {
 
 export interface Skill {
   name: string
-  level: 'Beginner' | 'Intermediate' | 'Advanced' | 'Highly knowledgeable' | 'Comfortable'
-  category: 'Backend' | 'Frontend' | 'Systems' | 'Languages' | 'AI/ML' | 'Blockchain' | 'DevOps'
+  level:
+    | 'Beginner'
+    | 'Intermediate'
+    | 'Advanced'
+    | 'Highly knowledgeable'
+    | 'Comfortable'
+  category:
+    | 'Backend'
+    | 'Frontend'
+    | 'Systems'
+    | 'Languages'
+    | 'AI/ML'
+    | 'Blockchain'
+    | 'DevOps'
 }
