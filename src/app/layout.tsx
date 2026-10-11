@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: '%s | Dismas Muriuki',
   },
   description:
-    'Dismas Muriuki Mutabari — software builder in Kenya working on AI infrastructure, developer tools and responsive interfaces. Explore DMR-X, MOTE, Chimera and Drift.',
+    'Dismas Muriuki Mutabari is a software builder in Kenya working on AI tools and their interfaces. Read about DMR-X, MOTE, Chimera and Drift.',
   keywords: [
     'Dismas Muriuki',
     'Designer',

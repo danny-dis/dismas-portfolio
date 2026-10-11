@@ -147,7 +147,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="flex w-full items-center justify-center space-x-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-colors duration-200 hover:bg-primary-700 disabled:cursor-not-allowed disabled:bg-primary-800"
+        className="button button-primary w-full disabled:cursor-not-allowed disabled:opacity-70"
       >
         {status === 'loading' ? (
           <>

@@ -7,8 +7,9 @@
 - [x] Replace generic copy with direct first-person writing using blader-humanizer, including the published architecture note. Existing factual claims, project links, attribution and education retained.
 - [x] Build an editorial dark/teal layout, project architecture illustrations and specific project narratives. Static hero replaces the client-side ticker; skill meters and repeated slogan sections removed.
 - [x] Thirteen regression tests pass; local typecheck and lint pass. New tests failed before the redesign, then passed. Post-format regression run also passed.
-- [x] Initial browser pass found under-distinguished links on desktop project details; fixed permanent link underlines. Final responsive/axe verification in progress.
-- [ ] Verify regression tests, keyboard/mobile behavior, accessibility, lint, typecheck and exact-lock production build.
+- [x] Initial browser passes found under-distinguished links and contact-button contrast; fixed permanent link underlines and the shared high-contrast button. All sixteen responsive cases pass axe A/AA checks, one h1 and no horizontal overflow. Keyboard menu/Escape/skip-link and reduced-motion checks pass; no console errors.
+- [x] First exact-lock redesign CI passed npm ci, thirteen tests, CV generation, typecheck, lint and production build.
+- [ ] Verify final follow-up revision with the deployment-parity regression test and explicit npm Vercel configuration; production remains a separate check.
 - [ ] Update existing PR and read back exact source revision; distinguish CI from Vercel deployment.
 
 Design contract: introduce Dismas and his actual work immediately; make selected projects the main content; keep source/CV/contact one click away. Dark ink, teal accents, restrained borders, asymmetric type and diagrams derived from project architecture. No fabricated dashboards, numbers, client outcomes, automatic role ticker, skill meters or repeated slogan sections. Responsive at 320/768/1024/1440px, semantic headings, visible focus, reduced-motion support, accessible mobile navigation. Contact API and existing unpublished blog drafts remain untouched.
