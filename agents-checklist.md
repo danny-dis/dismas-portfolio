@@ -9,8 +9,10 @@
 - [x] Thirteen regression tests pass; local typecheck and lint pass. New tests failed before the redesign, then passed. Post-format regression run also passed.
 - [x] Initial browser passes found under-distinguished links and contact-button contrast; fixed permanent link underlines and the shared high-contrast button. All sixteen responsive cases pass axe A/AA checks, one h1 and no horizontal overflow. Keyboard menu/Escape/skip-link and reduced-motion checks pass; no console errors.
 - [x] First exact-lock redesign CI passed npm ci, thirteen tests, CV generation, typecheck, lint and production build.
-- [ ] Verify final follow-up revision with the deployment-parity regression test and explicit npm Vercel configuration; production remains a separate check.
-- [ ] Update existing PR and read back exact source revision; distinguish CI from Vercel deployment.
+- [x] Final code `2a0678a` passed fourteen regression tests, exact-lock GitHub CI and Vercel's deployment check. The new regression test guards the explicit npm deployment configuration. The obsolete pnpm lock mismatch was reproduced independently before fixing the deployment path.
+- [x] Updated PR #1 and read back its exact source revision. Protected preview redirects to Vercel login, so that redirect is not treated as a rendered-site check.
+- [x] Checked out of implementation work; CV, unpublished drafts, contact API and unrelated repositories preserved.
+- Release gate: merge only with current green checks, then verify the public production pages and PDF. GitNexus graph review remains unavailable; source references and diff were reviewed manually.
 
 Design contract: introduce Dismas and his actual work immediately; make selected projects the main content; keep source/CV/contact one click away. Dark ink, teal accents, restrained borders, asymmetric type and diagrams derived from project architecture. No fabricated dashboards, numbers, client outcomes, automatic role ticker, skill meters or repeated slogan sections. Responsive at 320/768/1024/1440px, semantic headings, visible focus, reduced-motion support, accessible mobile navigation. Contact API and existing unpublished blog drafts remain untouched.
 
@@ -30,7 +32,7 @@ Design contract: introduce Dismas and his actual work immediately; make selected
 - [ ] Resolve Vercel preview failure using private build logs, then merge/deploy and read back production site/PDF.
 - [x] Checked out pending user authorization. Existing live site left unchanged.
 
-## Execution limitations and publication blocker
+## Execution limitations and publication blocker (prior refresh)
 
 - Local clean `npm ci` failed with registry EIDLETIMEOUT and Windows cleanup EPERM; Linux exact-lock CI install succeeded.
 - Old installed Next 14.0.4 local production build timed out in page-data workers. It is not used to establish patched production build success; the locked Next 14.2.35 CI build is verified separately.
