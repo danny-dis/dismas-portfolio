@@ -6,17 +6,13 @@ date: "2026-10-11"
 readTime: "4 min read"
 ---
 
-# Gateways, runtimes and workspaces: keeping the boundaries clear
-
-My AI projects cover several different layers. The useful question is not whether one project can do everything, but which responsibility belongs where.
-
-This note describes the public code and documentation reviewed for my portfolio update. It is not a benchmark report or a claim that every roadmap feature is deployed.
+I keep running into the same question when building AI tools: which part of the system should own a decision? Routing a request, executing a tool and keeping track of a coding session need different kinds of state. I’ve been working on those responsibilities in separate projects.
 
 ## DMR-X: where should a model request go?
 
-DMR-X is the gateway and routing layer. Applications can use it to connect to model providers without owning all the provider-specific logic themselves. The repository separates the gateway, provider integrations, routing services and a React management interface.
+DMR-X handles the gateway and routing layer. An application can connect to model providers through it and leave provider-specific integration to the gateway. The repository has separate code for routing services, provider integrations and the React management interface.
 
-The important boundary is between **routing inference** and **orchestrating an application**. A coding client can keep its own workflow while using a gateway underneath it.
+A coding client can keep its own workflow and use DMR-X underneath. Changing a provider should not require rebuilding that workflow.
 
 Sources: [DMR-X overview](https://github.com/danny-dis/dmr-X), [provider management interface](https://github.com/danny-dis/dmr-X/blob/main/apps/ui/src/pages/Providers.tsx).
 
@@ -24,33 +20,26 @@ Sources: [DMR-X overview](https://github.com/danny-dis/dmr-X), [provider managem
 
 MOTE is a small Rust execution engine. A run asks a model for an action, checks capability grants, executes a permitted tool and feeds back an observation. Configuration sets execution limits and fallback behavior.
 
-The bridge lets a host application supply Python or TypeScript tools. The application still owns its interface, approvals, scheduler and storage. A capability check is **not an operating-system sandbox**.
+The bridge lets a host application supply Python or TypeScript tools. The application owns its interface, approvals, scheduler and storage. Capability checks limit what the engine permits; they do not provide an operating-system sandbox.
 
 Sources: [MOTE documentation](https://github.com/danny-dis/MOTE), [capability implementation](https://github.com/danny-dis/MOTE/blob/production-ready/src/capability.rs), [bridge process](https://github.com/danny-dis/MOTE/blob/production-ready/src/bin/mote-bridge.rs).
 
 ## Chimera: how should a coding workflow be coordinated?
 
-Chimera is a developer-facing workspace. Its TypeScript packages cover coding-agent coordination, provider integration, tool loops, context, sessions and interfaces. Solo, duo and trio coordinator implementations provide different execution paths.
+Chimera handles the coding workspace. Its TypeScript packages cover coordination, provider integration, tool loops, context, saved sessions and interfaces. The solo, duo and trio coordinators have separate execution paths.
 
-That makes it a different layer from a provider gateway or a minimal runtime. The work is about organizing a coding interaction, not simply forwarding a model request.
+This layer has to keep track of the coding interaction: its context, tools and session state. A gateway can sit below it without taking over those jobs.
 
 Sources: [Chimera workspace](https://github.com/danny-dis/chimera/tree/main/packages), [duo coordinator](https://github.com/danny-dis/chimera/blob/main/packages/chimera-core/src/coordinator/duo-executor.ts), [trio coordinator](https://github.com/danny-dis/chimera/blob/main/packages/chimera-core/src/coordinator/trio-executor.ts).
 
 ## Drift: how should ideas and evidence remain useful?
 
-Drift is a local-first thinking workspace. A Python backend and React interface support idea capture, repository context, retained research sources and task review.
+Drift gives ideas and research a local workspace. A Python backend and React interface handle idea capture, repository context, retained sources and task review.
 
-Capturing an idea is not the same as completing model work. Recording a proposal is not the same as implementing it. Research citations still need human scrutiny. These distinctions keep the interface honest about what actually happened.
+The interface needs to show whether something is an idea, a proposal or completed work. A research report can retain its citations and still need someone to check them. Approval and implementation are separate steps, and the task state should make that visible.
 
 Sources: [Drift overview](https://github.com/danny-dis/Drift), [dashboard API](https://github.com/danny-dis/Drift/blob/main/drift/ui_api.py), [project and idea state](https://github.com/danny-dis/Drift/blob/main/drift/organism.py).
 
-## What I want the portfolio to show
+## Reading the work
 
-A useful portfolio should make the work inspectable:
-
-- Link the source, rather than imply that a repository alone proves production readiness.
-- Distinguish independent projects, maintained derivatives and architecture specifications.
-- Separate implemented behavior from future plans.
-- Make the interface, permissions and failure boundaries understandable.
-
-That is the connection between my engineering work and my growing design practice: make complicated systems easier to use without hiding their limitations.
+The repositories link to implementation files and document their current scope. Some work is an independent build; other repositories are maintained derivatives or architecture specifications. Those labels help explain what you’re looking at. The code and documentation can show how a feature works, but production readiness needs its own testing.

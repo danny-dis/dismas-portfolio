@@ -1,5 +1,18 @@
 # Agent checklist
 
+## Ishtar: humanized portfolio redesign
+
+- [x] Checked in on existing clean `feat/portfolio-cv-refresh`; preserving the first refresh and CV.
+- [x] Run upstream impact checks and record limitations before component edits: timed out; later GitNexus reported no registered portfolio index. Manual source-reference and diff review completed; graph risk is unknown, not a passed check.
+- [x] Replace generic copy with direct first-person writing using blader-humanizer, including the published architecture note. Existing factual claims, project links, attribution and education retained.
+- [x] Build an editorial dark/teal layout, project architecture illustrations and specific project narratives. Static hero replaces the client-side ticker; skill meters and repeated slogan sections removed.
+- [x] Thirteen regression tests pass; local typecheck and lint pass. New tests failed before the redesign, then passed. Post-format regression run also passed.
+- [x] Initial browser pass found under-distinguished links on desktop project details; fixed permanent link underlines. Final responsive/axe verification in progress.
+- [ ] Verify regression tests, keyboard/mobile behavior, accessibility, lint, typecheck and exact-lock production build.
+- [ ] Update existing PR and read back exact source revision; distinguish CI from Vercel deployment.
+
+Design contract: introduce Dismas and his actual work immediately; make selected projects the main content; keep source/CV/contact one click away. Dark ink, teal accents, restrained borders, asymmetric type and diagrams derived from project architecture. No fabricated dashboards, numbers, client outcomes, automatic role ticker, skill meters or repeated slogan sections. Responsive at 320/768/1024/1440px, semantic headings, visible focus, reduced-motion support, accessible mobile navigation. Contact API and existing unpublished blog drafts remain untouched.
+
 ## Ishtar — portfolio and CV refresh
 
 - [x] Checked in on `feat/portfolio-cv-refresh` from current `origin/main`; original working tree clean.

@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write .",
-    "test": "node tests/portfolio.test.cjs",
+    "test": "node --test tests/portfolio.test.cjs tests/redesign.test.cjs",
     "typecheck": "tsc --noEmit",
     "resume": "node scripts/generate-resume.js"
   },

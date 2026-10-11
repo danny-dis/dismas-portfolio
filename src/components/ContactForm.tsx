@@ -10,7 +10,9 @@ export default function ContactForm() {
     email: '',
     message: '',
   })
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<
+    'idle' | 'loading' | 'success' | 'error'
+  >('idle')
   const [errorMessage, setErrorMessage] = useState('')
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -38,12 +40,16 @@ export default function ContactForm() {
       }
     } catch (error) {
       setStatus('error')
-      setErrorMessage('Network error. Please check your connection and try again.')
+      setErrorMessage(
+        'Network error. Please check your connection and try again.'
+      )
     }
   }
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value,
     }))
@@ -51,15 +57,17 @@ export default function ContactForm() {
 
   if (status === 'success') {
     return (
-      <div className="glass rounded-lg p-8 text-center">
-        <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-        <h3 className="text-xl font-semibold text-dark-100 mb-2">Message Sent!</h3>
-        <p className="text-dark-300 mb-4">
-          Thank you for reaching out. I'll get back to you as soon as possible.
+      <div className="glass rounded-lg p-8 text-center" role="status">
+        <CheckCircle className="mx-auto mb-4 h-16 w-16 text-green-500" />
+        <h3 className="mb-2 text-xl font-semibold text-dark-100">
+          Message Sent!
+        </h3>
+        <p className="mb-4 text-dark-300">
+          Your message has been sent. I’ll reply by email.
         </p>
         <button
           onClick={() => setStatus('idle')}
-          className="text-primary-400 hover:text-primary-300 transition-colors"
+          className="text-primary-400 transition-colors hover:text-primary-300"
         >
           Send another message
         </button>
@@ -68,9 +76,12 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="glass rounded-lg p-8 space-y-6">
+    <form onSubmit={handleSubmit} className="glass space-y-6 rounded-lg p-8">
       <div>
-        <label htmlFor="name" className="block text-sm font-medium text-dark-200 mb-2">
+        <label
+          htmlFor="name"
+          className="mb-2 block text-sm font-medium text-dark-200"
+        >
           Name *
         </label>
         <input
@@ -80,13 +91,16 @@ export default function ContactForm() {
           required
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-dark-100 placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+          className="w-full rounded-lg border border-dark-600 bg-dark-700 px-4 py-3 text-dark-100 placeholder-dark-400 transition-colors focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500"
           placeholder="Your full name"
         />
       </div>
 
       <div>
-        <label htmlFor="email" className="block text-sm font-medium text-dark-200 mb-2">
+        <label
+          htmlFor="email"
+          className="mb-2 block text-sm font-medium text-dark-200"
+        >
           Email *
         </label>
         <input
@@ -96,13 +110,16 @@ export default function ContactForm() {
           required
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-dark-100 placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+          className="w-full rounded-lg border border-dark-600 bg-dark-700 px-4 py-3 text-dark-100 placeholder-dark-400 transition-colors focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500"
           placeholder="your.email@example.com"
         />
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-dark-200 mb-2">
+        <label
+          htmlFor="message"
+          className="mb-2 block text-sm font-medium text-dark-200"
+        >
           Message *
         </label>
         <textarea
@@ -112,13 +129,16 @@ export default function ContactForm() {
           rows={6}
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg text-dark-100 placeholder-dark-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-vertical"
-          placeholder="Tell me about your project, question, or just say hello..."
+          className="resize-vertical w-full rounded-lg border border-dark-600 bg-dark-700 px-4 py-3 text-dark-100 placeholder-dark-400 transition-colors focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500"
+          placeholder="What are you working on, and where could I help?"
         />
       </div>
 
       {status === 'error' && (
-        <div className="flex items-center space-x-2 text-red-400 bg-red-900/20 border border-red-800 rounded-lg p-3">
+        <div
+          className="flex items-center space-x-2 rounded-lg border border-red-800 bg-red-900/20 p-3 text-red-400"
+          role="alert"
+        >
           <AlertCircle size={20} />
           <span className="text-sm">{errorMessage}</span>
         </div>
@@ -127,11 +147,11 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === 'loading'}
-        className="w-full bg-primary-600 hover:bg-primary-700 disabled:bg-primary-800 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center space-x-2"
+        className="flex w-full items-center justify-center space-x-2 rounded-lg bg-primary-600 px-6 py-3 font-semibold text-white transition-colors duration-200 hover:bg-primary-700 disabled:cursor-not-allowed disabled:bg-primary-800"
       >
         {status === 'loading' ? (
           <>
-            <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+            <div className="h-5 w-5 animate-spin rounded-full border-b-2 border-white"></div>
             <span>Sending...</span>
           </>
         ) : (
@@ -142,8 +162,9 @@ export default function ContactForm() {
         )}
       </button>
 
-      <p className="text-xs text-dark-400 text-center">
-        * Required fields. Your information will be kept private and secure.
+      <p className="text-center text-xs text-dark-400">
+        * All fields are required. Please don’t include passwords or other
+        sensitive information.
       </p>
     </form>
   )

@@ -1,72 +1,65 @@
-'use client'
+import Link from 'next/link'
+import { ArrowUpRight, ArrowRight } from 'lucide-react'
 
-import { useState, useEffect } from 'react'
-import { ArrowDown, ArrowRight, Code2, Palette } from 'lucide-react'
-
-const typewriterTexts = ['Designer + Coder', 'Software Engineer', 'AI Systems Builder', 'Frontend Developer']
+const work = [
+  ['dmr-x', 'DMR-X', 'AI gateway and model routing'],
+  ['mote', 'MOTE', 'A small Rust agent engine'],
+  ['chimera', 'Chimera', 'A workspace for coding agents'],
+  ['drift', 'Drift', 'Ideas and research, kept locally'],
+]
 
 export default function Hero() {
-  const [currentTextIndex, setCurrentTextIndex] = useState(0)
-  const [currentText, setCurrentText] = useState('')
-  const [isDeleting, setIsDeleting] = useState(false)
-
-  useEffect(() => {
-    const fullText = typewriterTexts[currentTextIndex]
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        setCurrentText(fullText.substring(0, currentText.length + 1))
-        if (currentText === fullText) setTimeout(() => setIsDeleting(true), 1800)
-      } else {
-        setCurrentText(fullText.substring(0, currentText.length - 1))
-        if (currentText === '') {
-          setIsDeleting(false)
-          setCurrentTextIndex((prev) => (prev + 1) % typewriterTexts.length)
-        }
-      }
-    }, isDeleting ? 45 : 85)
-    return () => clearTimeout(timeout)
-  }, [currentText, isDeleting, currentTextIndex])
-
-  const scrollToWork = () => document.getElementById('work')?.scrollIntoView({ behavior: 'smooth' })
-
   return (
-    <section className="min-h-[90vh] flex items-center justify-center relative overflow-hidden" aria-label="Introduction">
-      <div className="absolute inset-0 pointer-events-none grid-pattern" />
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_50%_30%,rgba(20,184,166,0.12),transparent_42%)]" />
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-        <div className="fade-in visible">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-sm text-dark-300 mb-8">
-            <span className="w-2 h-2 rounded-full bg-primary-400 animate-pulse" aria-hidden="true" />
-            Designer + Coder · Kenya
-          </div>
-
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.02] mb-7">
-            <span className="text-dark-100">I design </span>
-            <span className="text-gradient">digital experiences</span>
-            <span className="text-dark-100"> and build them too.</span>
+    <section className="hero site-width" aria-labelledby="intro-title">
+      <div className="hero-grid">
+        <div>
+          <p className="eyebrow">DISMAS MURIUKI / SOFTWARE BUILDER</p>
+          <h1 id="intro-title">
+            I build AI tools
+            <br />
+            and the interfaces
+            <br />
+            <span>around them.</span>
           </h1>
-
-          <div className="min-h-10 mb-7" aria-live="polite" aria-label="Current role">
-            <p className="text-xl md:text-2xl text-dark-300"><span className="text-primary-400 font-semibold">{currentText}</span><span className="animate-pulse" aria-hidden="true">|</span></p>
+          <p className="hero-intro">
+            I’m Dismas, a developer in Kenya. My work ranges from model routing
+            to coding-agent workspaces. I like getting into the system
+            underneath, then making it easier to work with.
+          </p>
+          <div className="link-row">
+            <a href="#work" className="button button-primary">
+              Explore the work <ArrowRight size={18} aria-hidden="true" />
+            </a>
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="button"
+            >
+              Read my CV <ArrowUpRight size={18} aria-hidden="true" />
+            </a>
           </div>
-
-          <p className="text-lg md:text-xl text-dark-400 mb-10 max-w-3xl mx-auto leading-relaxed">I’m Dismas Muriuki Mutabari, a self-directed software builder in Kenya. I work on AI gateways, agent runtimes and developer tools, with React interfaces that make complex systems easier to use.</p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="#work" className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-7 py-3.5 rounded-lg font-semibold transition-colors hover-lift">See My Work <ArrowRight size={18} /></a>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 border border-dark-600 hover:border-primary-500 text-dark-200 hover:text-primary-400 px-7 py-3.5 rounded-lg font-semibold transition-colors hover-lift">View CV</a>
-          </div>
-
-          <div className="flex flex-wrap justify-center gap-3 mt-10 text-sm text-dark-400">
-            <span className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-800/70 border border-dark-700/60"><Palette size={16} /> UI / UX</span>
-            <span className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-dark-800/70 border border-dark-700/60"><Code2 size={16} /> Frontend</span>
-            <span className="px-3 py-2 rounded-lg bg-dark-800/70 border border-dark-700/60">TypeScript · Python · Rust · React</span>
-            <span className="px-3 py-2 rounded-lg bg-dark-800/70 border border-dark-700/60">Open to remote work · EAT / UTC+3</span>
+          <div className="hero-meta">
+            <span>Based in Kenya · UTC+3</span>
+            <span>Open to remote work</span>
           </div>
         </div>
+        <aside className="work-index" aria-label="Selected project index">
+          <p className="index-heading">A LOOK INSIDE THE WORK</p>
+          {work.map(([id, name, description], index) => (
+            <Link className="index-row" href={`/projects/${id}`} key={id}>
+              <span className="index-number" aria-hidden="true">
+                0{index + 1}
+              </span>
+              <span>
+                <strong>{name}</strong>
+                <small>{description}</small>
+              </span>
+              <ArrowUpRight size={18} aria-hidden="true" />
+            </Link>
+          ))}
+        </aside>
       </div>
-
-      <button onClick={scrollToWork} className="absolute bottom-8 left-1/2 -translate-x-1/2 text-dark-500 hover:text-primary-400 transition-colors animate-bounce" aria-label="Scroll to selected work"><ArrowDown size={26} /></button>
     </section>
   )
 }

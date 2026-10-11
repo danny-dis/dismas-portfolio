@@ -1,98 +1,200 @@
 import { Project } from '@/types'
 
-// Public, source-reviewable work. Counts and release claims are deliberately omitted.
 export const projects: Project[] = [
   {
     id: 'dmr-x',
-    title: 'DMR-X — AI Gateway & Adaptive Routing',
-    description: 'Local-first AI infrastructure that connects applications to model providers through a shared gateway and routing policies.',
-    longDescription: 'DMR-X separates model routing from application orchestration. Its TypeScript gateway, React management interface and provider integrations bring model discovery, routing constraints, fallbacks and usage controls into one codebase. The project explores cost, latency, reliability and privacy trade-offs without requiring callers to adopt a particular agent framework.',
+    title: 'DMR-X — AI gateway and adaptive routing',
+    description:
+      'One gateway between an application and its model providers, with routing policies, fallback paths and a React management interface.',
+    longDescription:
+      'DMR-X handles model discovery, provider integration and request routing in a TypeScript gateway. Applications can use it without adopting a particular agent framework. The React interface puts provider configuration and model management alongside the routing controls.',
     technologies: ['TypeScript', 'Bun', 'React', 'Vite', 'MCP', 'SQLite'],
     githubUrl: 'https://github.com/danny-dis/dmr-X',
     featured: true,
-    features: ['Provider and model management through a React interface', 'Configurable model routing, free-tier selection and fallback paths', 'Gateway integration for external AI applications and coding clients', 'MCP tooling and a separate optional agent-runtime layer'],
+    features: [
+      'Provider and model management in React',
+      'Configurable routing, free-tier selection and fallback paths',
+      'Gateway integration for AI applications and coding clients',
+      'MCP tools and a separate optional agent-runtime layer',
+    ],
     sourceUrl: 'https://github.com/danny-dis/dmr-X/tree/main/apps',
     provenance: 'Independent project · active development',
+    story: {
+      problem:
+        'An application may need several model providers, each with its own integration and availability constraints. Putting those decisions into every caller makes the application harder to change.',
+      decision:
+        'Keep provider adapters and routing policy in a shared gateway. The application owns its workflow; the gateway handles the choice of model and the fallback path.',
+      scope:
+        'DMR-X brings discovery, routing and usage controls together and is in active development. Its routing policies address cost, latency, reliability and privacy trade-offs; their results depend on the configured providers and workloads.',
+    },
   },
   {
     id: 'mote',
-    title: 'MOTE — Minimal Agent Execution Engine',
-    description: 'A small Rust library and CLI for bounded model-and-tool execution, with Python and TypeScript bridge SDKs.',
-    longDescription: 'MOTE implements a model → capability check → tool execution → observation loop. YAML configuration controls grants, model fallback and execution limits. A separate bridge lets Python and TypeScript applications supply their own tools. The application remains responsible for its interface, approvals, scheduling and storage; capability checks are not an operating-system sandbox.',
+    title: 'MOTE — Minimal agent execution engine',
+    description:
+      'A small Rust engine for model-and-tool loops. Capability grants and execution limits stay explicit; applications supply their own tools.',
+    longDescription:
+      'MOTE runs a model response through a capability check, executes the allowed tool, then returns an observation to the loop. YAML configuration controls grants, fallback models and execution limits. A separate bridge connects application-owned tools through Python and TypeScript SDKs.',
     technologies: ['Rust', 'Python', 'TypeScript', 'YAML', 'JSONL'],
     githubUrl: 'https://github.com/danny-dis/MOTE',
     liveUrl: 'https://mote-runtime.vercel.app',
     featured: true,
-    features: ['Opt-in capability grants and bounded execution', 'Rust library, command-line runtime and separate bridge process', 'Application-owned tools through Python and TypeScript SDKs', 'Public binary releases with checksums and integration-test infrastructure'],
+    features: [
+      'Opt-in capability grants and bounded execution',
+      'Rust library, CLI and separate bridge process',
+      'Application-owned tools through Python and TypeScript SDKs',
+      'Public binary releases with checksums and integration-test infrastructure',
+    ],
     sourceUrl: 'https://github.com/danny-dis/MOTE/tree/production-ready/src',
     provenance: 'Independent project · library and CLI',
+    story: {
+      problem:
+        'An application that needs a model-and-tool loop should be able to keep control of its interface, approvals and data. Bundling all of that into the engine makes reuse harder.',
+      decision:
+        'Give the engine a narrow job: check capabilities, execute tools and return observations within configured limits. Use a bridge so Python and TypeScript callers can supply the tools.',
+      scope:
+        'The application still owns scheduling, approvals and storage. Capability checks are not an operating-system sandbox. The project website describes the engine; it is not a hosted execution service.',
+    },
   },
   {
     id: 'chimera',
-    title: 'Chimera — Multi-Agent Coding Workspace',
-    description: 'A TypeScript coding-agent workspace that coordinates model providers, tool execution and terminal workflows.',
-    longDescription: 'Chimera brings coding-agent execution, provider integration and developer-facing interfaces into a modular TypeScript workspace. Its coordinator includes solo, duo and trio execution paths, context handling and tool loops. Separate packages cover sessions, Git worktree isolation, declarative workflows and VS Code integration. Its focus is developer-controlled coding workflows across terminal and editor interfaces.',
-    technologies: ['TypeScript', 'Node.js', 'React', 'Git Worktrees', 'VS Code API', 'Vitest'],
+    title: 'Chimera — Multi-agent coding workspace',
+    description:
+      'A coding-agent workspace with solo, duo and trio execution paths, provider adapters and terminal/editor integration.',
+    longDescription:
+      'Chimera coordinates coding-agent execution in a TypeScript workspace. The core handles model providers, context and tool loops. Separate packages cover saved sessions, Git worktree isolation, declarative workflows and VS Code integration.',
+    technologies: [
+      'TypeScript',
+      'Node.js',
+      'React',
+      'Git Worktrees',
+      'VS Code API',
+      'Vitest',
+    ],
     githubUrl: 'https://github.com/danny-dis/chimera',
     featured: true,
-    features: ['Solo, duo and trio coordinator implementations', 'Provider adapters and model/tool execution loops', 'Context handling and persisted coding sessions', 'Worktree isolation and terminal/IDE integration packages'],
+    features: [
+      'Solo, duo and trio coordinators',
+      'Provider adapters and model/tool loops',
+      'Context handling and persisted coding sessions',
+      'Worktree isolation and terminal/IDE packages',
+    ],
     sourceUrl: 'https://github.com/danny-dis/chimera/tree/main/packages',
     provenance: 'Independent project · active development',
+    story: {
+      problem:
+        'Coding-agent workflows involve more than a model response. They need project context, tools, saved sessions and a way to keep parallel code changes separate.',
+      decision:
+        'Split coordination, sessions, isolation and interfaces into packages. Keep solo, duo and trio execution paths explicit and use Git worktrees for isolated coding work.',
+      scope:
+        'Chimera is an actively developed workspace. The package tree includes terminal and VS Code integration; it does not establish a published marketplace extension or hosted service.',
+    },
   },
   {
     id: 'drift',
-    title: 'Drift — Local-First Thinking Workspace',
-    description: 'A Python and React workspace for capturing ideas, connecting repositories and reviewing source-backed research.',
-    longDescription: 'Drift pairs a local Python backend with a React dashboard for ideas, project context, research reports and task review. It retains local state across restarts and connects to a separately configured model gateway. Explicit approval boundaries and bounded calls keep research and proposals distinct from actual source-code changes. Drift is a thinking workspace, not an autonomous coding factory.',
-    technologies: ['Python', 'FastAPI', 'React', 'TypeScript', 'Vite', 'SQLite'],
+    title: 'Drift — Local-first thinking workspace',
+    description:
+      'A local workspace for ideas, repository context and research. Sources stay with the notes, and tasks have explicit approval boundaries.',
+    longDescription:
+      'Drift pairs a Python backend with a React dashboard for ideas, projects, research reports and task review. It keeps local state across restarts and uses a separately configured model gateway. Model-call budgets and approval boundaries constrain research and proposed changes.',
+    technologies: [
+      'Python',
+      'FastAPI',
+      'React',
+      'TypeScript',
+      'Vite',
+      'SQLite',
+    ],
     githubUrl: 'https://github.com/danny-dis/Drift',
     featured: true,
-    features: ['Idea capture, repository registration and managed project notes', 'Research reports with retained sources and citation review', 'Queued and blocked tasks with explicit approval', 'Local persistence and model-call/resource budgets'],
+    features: [
+      'Idea capture, repository registration and project notes',
+      'Research reports with retained sources and citation review',
+      'Queued and blocked tasks with explicit approval',
+      'Local persistence and model-call/resource budgets',
+    ],
     sourceUrl: 'https://github.com/danny-dis/Drift/blob/main/drift/ui_api.py',
     provenance: 'Independent project · local-first application',
+    story: {
+      problem:
+        'Ideas and research need somewhere to live alongside project context. A proposed change also needs to remain distinguishable from a change someone has approved and implemented.',
+      decision:
+        'Keep ideas, repository notes and research in a local workspace. Retain sources with reports and make queued, blocked and approval-dependent tasks visible in the dashboard.',
+      scope:
+        'Drift is a thinking and research workspace. Citation review is not independent fact-checking, and a proposed task does not mean Drift has changed the source code.',
+    },
   },
   {
     id: 'glue',
-    title: 'G.L.U.E. — Agent Interoperability Architecture',
-    description: 'An architecture and specification project for connecting heterogeneous agents without replacing their native runtimes.',
-    longDescription: 'G.L.U.E. documents an interoperability fabric covering agent identity, discovery, capability registration, protocol adapters, trust and provenance. The repository explicitly identifies itself as an architecture/specification project. The specifications set implementation direction for federation and capability routing.',
+    title: 'G.L.U.E. — Agent interoperability architecture',
+    description:
+      'Specifications for agent identity, discovery and capability routing across different runtimes.',
+    longDescription:
+      'G.L.U.E. is an architecture and specification project. Its documents cover agent federation, protocol adapters, capability registration, trust and provenance. They set a direction for implementation rather than describe a deployed platform.',
     technologies: ['System Architecture', 'MCP', 'A2A', 'Protocol Design'],
     githubUrl: 'https://github.com/danny-dis/G.L.U.E',
     featured: false,
-    features: ['Federation and interoperability specifications', 'Capability-first routing and agent identity contracts', 'Least-privilege admission and provenance design', 'Clear boundaries between federation, governance and memory'],
+    features: [
+      'Federation and interoperability specifications',
+      'Capability routing and agent identity contracts',
+      'Least-privilege admission and provenance design',
+      'Boundaries between federation, governance and memory',
+    ],
     sourceUrl: 'https://github.com/danny-dis/G.L.U.E/tree/master/docs',
     provenance: 'Architecture / specification · not a deployed platform',
   },
   {
     id: 'letty',
-    title: 'Letty — Maintained Coding-Agent Derivative',
-    description: 'A maintained derivative of Mario Zechner’s Pi agent, with terminal tools, provider integrations and resumable sessions.',
-    longDescription: 'Letty is a maintained derivative based on the Pi agent project, with the original MIT attribution retained. Its TypeScript workspace covers a coding CLI, agent loop, provider abstraction, terminal UI, sessions and extension interfaces. The work builds on Pi, with upstream authorship and licensing credited.',
+    title: 'Letty — Maintained coding-agent derivative',
+    description:
+      'A maintained derivative of Mario Zechner’s Pi agent, with terminal tools, provider integration and resumable sessions.',
+    longDescription:
+      'Letty builds on Pi and retains its MIT attribution. The TypeScript workspace covers a coding CLI, agent loop, provider abstraction, terminal UI, sessions and extensions. The repository credits the upstream project and its authors.',
     technologies: ['TypeScript', 'Node.js', 'Terminal UI', 'SQLite', 'RPC'],
     githubUrl: 'https://github.com/danny-dis/letty',
     featured: false,
-    features: ['Terminal coding-agent tools and provider integrations', 'Resumable sessions and extension interfaces', 'Interactive, one-shot, JSON and RPC interfaces', 'Upstream attribution retained in repository documentation'],
+    features: [
+      'Terminal coding tools and provider integration',
+      'Resumable sessions and extensions',
+      'Interactive, one-shot, JSON and RPC interfaces',
+      'Upstream attribution retained in the documentation',
+    ],
     sourceUrl: 'https://github.com/danny-dis/letty/tree/main/packages',
     provenance: 'Maintained derivative · upstream: badlogic/pi-mono',
   },
   {
     id: 'votechain',
-    title: 'Decentralized Voting — Ethereum Project Adaptation',
-    description: 'A fork-based voting project with Solidity contracts, voter/admin interfaces and browser-based demonstration flows.',
-    longDescription: 'This repository adapts an existing Ethereum voting project for university election workflows. The public source contains Solidity contracts, HTML/JavaScript voter and admin interfaces, a FastAPI database service and simplified localStorage demonstrations. The original project is credited in the README.',
-    technologies: ['Solidity', 'JavaScript', 'HTML / CSS', 'FastAPI', 'MySQL', 'Truffle'],
+    title: 'Decentralized voting — Ethereum project adaptation',
+    description:
+      'An educational adaptation of an Ethereum voting project for university elections, with voter and administrator interfaces.',
+    longDescription:
+      'This fork adapts an existing voting project for university election workflows. The source includes Solidity contracts, HTML/JavaScript interfaces, a FastAPI database service and browser-local demonstrations. The README credits the original project.',
+    technologies: [
+      'Solidity',
+      'JavaScript',
+      'HTML / CSS',
+      'FastAPI',
+      'MySQL',
+      'Truffle',
+    ],
     githubUrl: 'https://github.com/danny-dis/Decentralized-Voting-System',
     featured: false,
-    features: ['Ethereum voting contracts and election administration', 'Voter and administrator interfaces', 'MetaMask integration and local demonstration flows', 'Upstream project attribution in the README'],
-    sourceUrl: 'https://github.com/danny-dis/Decentralized-Voting-System/tree/main/contracts',
+    features: [
+      'Voting contracts and election administration',
+      'Voter and administrator interfaces',
+      'MetaMask integration and local demonstrations',
+      'Original project attribution in the README',
+    ],
+    sourceUrl:
+      'https://github.com/danny-dis/Decentralized-Voting-System/tree/main/contracts',
     provenance: 'Fork-based adaptation · educational project',
   },
 ]
 
 export function getFeaturedProjects(): Project[] {
-  return projects.filter(project => project.featured)
+  return projects.filter((project) => project.featured)
 }
 
 export function getProjectBySlug(slug: string): Project | undefined {
-  return projects.find(project => project.id === slug)
+  return projects.find((project) => project.id === slug)
 }
