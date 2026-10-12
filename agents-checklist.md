@@ -1,5 +1,16 @@
 # Agent checklist
 
+## Ishtar — October 12 CV publication
+
+- [x] Checked in; main working tree clean. Scope: CV source, generator, regression coverage, evidence and downloadable assets only; preserve site design and unrelated work.
+- [x] Impact/change analysis attempted: GitNexus has no portfolio index. Manual review bounds generator usage to npm resume/CI and assets linked by header/hero/footer/about; graph risk unknown. Named helper function bodies unchanged.
+- [x] Regression coverage failed before the update; now all 18 tests pass. Confirmed attachment and solo-fork/local-rebuild details included; alias excluded.
+- [x] One-page PDF visually verified, all content extracted, seven links; editable Word package validated.
+- [x] Typecheck and lint pass. Local build passes with NODE_ENV=production on existing Next 14.0.4, which is older than locked 14.2.35; exact-lock CI build is the release gate. Diff/check review completed; graph detect-changes attempted but unavailable.
+- [ ] Push reviewed branch/PR, verify CI and Vercel, then update production and read back exact public CV.
+- [ ] Check out with verified release state.
+
+
 ## Ishtar: humanized portfolio redesign
 
 - [x] Checked in on existing clean `feat/portfolio-cv-refresh`; preserving the first refresh and CV.
