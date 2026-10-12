@@ -7,8 +7,8 @@
 - [x] Regression coverage failed before the update; now all 18 tests pass. Confirmed attachment and solo-fork/local-rebuild details included; alias excluded.
 - [x] One-page PDF visually verified, all content extracted, seven links; editable Word package validated.
 - [x] Typecheck and lint pass. Local build passes with NODE_ENV=production on existing Next 14.0.4, which is older than locked 14.2.35; exact-lock CI build is the release gate. Diff/check review completed; graph detect-changes attempted but unavailable.
-- [ ] Push reviewed branch/PR, verify CI and Vercel, then update production and read back exact public CV.
-- [ ] Check out with verified release state.
+- [x] PR #2 reviewed (independent review: no blocking findings), clean exact-lock CI and Vercel preview passed, then squash-merged as e0be48f. Production CI run 38215236547 and Vercel passed.
+- [x] Public PDF/Word downloaded and matched merged asset hashes exactly; PDF one page/seven links with attachment and voting details. Homepage/about still expose CV links. Checked out; design, contact API and unrelated repositories unchanged.
 
 
 ## Ishtar: humanized portfolio redesign
