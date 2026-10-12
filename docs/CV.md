@@ -1,57 +1,61 @@
 # Dismas Muriuki Mutabari
 
-**Software Engineer | Design-minded Builder**
+**Software Developer | AI Infrastructure & Full-Stack Projects**
 
-Kenya | EAT / UTC+3 | Open to remote opportunities
+Kenya | EAT (UTC+3) | Open to remote opportunities
 
-muriukidismas9@gmail.com | https://dismas-portfolio.vercel.app | https://github.com/danny-dis
+muriukidismas9@gmail.com
+https://github.com/danny-dis | https://dismas-portfolio.vercel.app
 
 ## Summary
 
-Self-directed software builder working across AI infrastructure, developer tools and responsive interfaces. Independent projects combine TypeScript, Python, Rust and React, with an emphasis on modular architecture, explicit permissions and source-reviewable work. Growing a UI/UX practice alongside engineering; seeking software, frontend and design-to-code opportunities.
+Computer Science undergraduate and self-directed developer working on AI gateways, agent runtimes and web applications. Project experience spans TypeScript, Python, Rust and Solidity, with a focus on modular architecture, API integration and developer tooling. Seeking junior software development opportunities.
 
-## Technical skills
+## Technical Skills
 
-- Languages: TypeScript, JavaScript, Python, Rust, SQL
-- Applications: React, Next.js, Vite, Tailwind CSS, FastAPI, Node.js, Bun
-- AI & systems: LLM/provider integration, agent tool loops, MCP, SQLite, REST APIs
-- Workflow: Git, GitHub Actions, Docker, Linux, automated tests, documentation
-- Design practice: Figma, wireframing, prototyping, responsive layouts (developing)
+**Languages:** TypeScript, JavaScript, Python, Rust, Solidity, SQL
+**Web & APIs:** React, Next.js, Node.js, Bun, Hono, FastAPI, REST APIs
+**Data & tooling:** PostgreSQL, MySQL, SQLite, Git, Docker, GitHub Actions
+**Engineering:** LLM integration, agent tool loops, MCP, automated tests, smart contracts
 
-## Selected independent projects
+## Project Experience
+
 
 ### DMR-X — AI Gateway & Adaptive Routing
-
-TypeScript / Bun / React / Vite / MCP | https://github.com/danny-dis/dmr-X
-
-- Developing a local-first gateway that separates provider/model routing from application orchestration.
-- Work spans provider management, a React interface, configurable routing and fallback paths.
+Independent project | TypeScript, Bun, React, Vite
+https://github.com/danny-dis/dmr-X
+- Developing a local-first AI gateway with configurable provider/model routing and fallback paths, separating routing from application orchestration.
+- Work includes provider management, model integration and a React interface for configuring the gateway.
 
 ### MOTE — Minimal Agent Execution Engine
+Independent project | Rust, Python, TypeScript
+https://github.com/danny-dis/MOTE
+- Developed a compact model-and-tool execution engine with capability grants, provider fallback and bounded runs.
+- Created library/CLI interfaces and a bridge for application-owned Python and TypeScript tools.
 
-Rust / Python / TypeScript / YAML / JSONL | https://github.com/danny-dis/MOTE
-
-- Built a compact model-and-tool execution engine with capability grants, fallback and bounded runs.
-- Provides a library/CLI and a separate bridge for application-owned Python and TypeScript tools.
+### Decentralized Voting System — University Project & Continued Development
+Solo extension of an open-source project | Solidity, TypeScript, Next.js, PostgreSQL
+https://github.com/danny-dis/Decentralized-Voting-System
+- Independently extended an existing Ethereum voting application with multi-election management, admin/voter interfaces and improved MetaMask handling.
+- Subsequently rebuilt the local application as a multi-tenant Next.js/Hono platform with PostgreSQL, blockchain event indexing and SSE results streaming.
+- Added contract-level Merkle eligibility checks, nullifier-based repeat-vote controls and results certification, alongside backend role checks and test suites; integration remains in progress.
 
 ### Chimera — Multi-Agent Coding Workspace
-
-TypeScript / Node.js / React / Git worktrees | https://github.com/danny-dis/chimera
-
+Independent project | TypeScript, Node.js, React, Git worktrees
+https://github.com/danny-dis/chimera
 - Developing a modular coding-agent workspace with solo, duo and trio coordinator implementations.
-- Work covers provider integration, tool loops, context handling, sessions and developer interfaces.
+- Work covers provider integration, tool loops, context handling, session management and developer interfaces.
 
-### Drift — Local-First Thinking Workspace
+**Other projects:** Drift: Python/FastAPI and React workspace for ideas, repository context and source-linked research. Happy Teens Movie App: first university software project.
 
-Python / FastAPI / React / TypeScript / SQLite | https://github.com/danny-dis/Drift
+## Experience
 
-- Built a local workspace for ideas, repository context and research reports with retained sources.
-- Pairs a React dashboard with explicit task review, local persistence and bounded model calls.
+
+### Industrial Attachment — Centrino Technologies Limited
+June–August 2024 | Nairobi, Kenya
+- Completed video-based MySQL training and knowledge-check assessments, with guidance from technical staff at a financial-services software company.
 
 ## Education
 
-BSc Computer Science candidate — Murang'a University of Technology; expected graduation 2027.
-
-## Availability
-
-Open to software, frontend and design-to-code opportunities. Based in Kenya, with daytime overlap with European teams and a self-directed, documentation-focused working style.
+BSc Computer Science (in progress) — Murang'a University of Technology | Expected graduation: 2027
+Nkubu High School | 2016–April 2021 | KCSE: B (plain)

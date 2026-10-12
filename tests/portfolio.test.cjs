@@ -43,7 +43,7 @@ test('CV is repository-owned, accurate and application-ready', () => {
   assert.equal(cv.name, 'Dismas Muriuki Mutabari')
   assert.match(cv.education, /expected graduation 2027/i)
   assert.equal(cv.email, 'muriukidismas9@gmail.com')
-  assert.deepEqual(cv.projects.map(p => p.id), ['dmr-x', 'mote', 'chimera', 'drift'])
+  assert.deepEqual(cv.projects.map(p => p.id), ['dmr-x', 'mote', 'voting', 'chimera'])
   assert.doesNotMatch(JSON.stringify(cv), /production-grade|Lead Engineer|57\+|244\+/)
 })
 

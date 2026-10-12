@@ -23,11 +23,18 @@ Reviewed for the October 2026 portfolio/CV refresh. Descriptions are based on pu
 
 - **G.L.U.E.:** https://github.com/danny-dis/G.L.U.E — its README explicitly identifies an architecture/specification project. Federation design is not presented as a running production platform.
 - **Letty:** https://github.com/danny-dis/letty — maintained derivative of Mario Zechner's Pi agent, with upstream attribution. Not presented as original authorship of the whole system.
-- **Decentralized Voting:** https://github.com/danny-dis/Decentralized-Voting-System — GitHub identifies it as a fork. The public README/source uses Solidity, HTML/JavaScript, FastAPI, MySQL and Truffle, plus browser-local demonstrations. The previous Base L2 / Privy / Foundry / PostgreSQL SaaS description did not match this public repository.
+- **Decentralized Voting:** https://github.com/danny-dis/Decentralized-Voting-System — fork of Krish-Depani's project; user confirms a solo extension.
+  - Public source uses Solidity, HTML/JavaScript, FastAPI, MySQL and Truffle, plus browser-local demonstrations.
+  - October 12 local review: `Documents/projects/Decentralized-Voting-System` contains a subsequent July 2026 Next.js/Hono/PostgreSQL/Foundry rebuild with seven commits ahead of the original-upstream tracking ref, plus uncommitted OTP/session work. Local origin points to Krish-Depani's original repo, not the user's fork; GitHub does not expose this later source.
+  - Implementation evidence: `contracts-foundry/src/Voting.sol` (Merkle proofs/nullifiers/roles/certification), `app/packages/server/src/indexer/index.ts`, `app/packages/server/src/sse/index.ts`, `app/packages/server/src/auth/rbac.ts`, and contract/server test suites.
+  - No full runtime/deployment verification performed for the rebuild. Ballot proof/commitment integration is unfinished; OTP delivery and cloud KMS providers remain TODOs. CV separates later local development and does not claim production readiness, national-election suitability or ballot secrecy.
 
 ## Personal facts
 
-- Professional name: Dismas Muriuki Mutabari.
+- Professional name: Dismas Muriuki Mutabari; exclude the user's Git author alias from CV and document metadata.
+- Industrial attachment: Centrino Technologies Limited, Nairobi, June–August 2024. User reports video-based MySQL training, knowledge-check assessments and staff guidance; no responsibility for live banking systems claimed.
+- University final project: Decentralized Voting System, solo extension of an open-source fork; subsequent local redevelopment is separate from the university submission. Happy Teens Movie App was the first university project.
+- Nkubu High School: 2016–April 2021; KCSE B (plain), user-reported. Primary-school marks omitted from technical CV.
 - Email and GitHub are taken from the user's existing portfolio and CV.
 - Kenya, EAT / UTC+3.
 - BSc Computer Science candidate at Murang'a University of Technology; expected graduation 2027, based on the user's reported delay. Do not claim completed coursework or graduation without confirmation.
