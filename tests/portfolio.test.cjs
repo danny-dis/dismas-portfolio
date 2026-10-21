@@ -31,8 +31,9 @@ test('portfolio copy uses supported positioning and consistent education', () =>
   assert.match(footer, /design/i)
   for (const file of ['src/app/page.tsx', 'src/app/about/page.tsx']) {
     const source = fs.readFileSync(path.join(root, file), 'utf8')
-    assert.match(source, /expected graduation 2027/i)
-    assert.doesNotMatch(source, /completed my BSc.*coursework/i)
+    assert.match(source.replace(/\s+/g, ' '), /BSc award is expected in 2027/i)
+    assert.match(source, /completed my computer science studies/i)
+    assert.doesNotMatch(source, /currently studying|Today I’m studying|degree awarded/i)
   }
 })
 
@@ -41,7 +42,7 @@ test('CV is repository-owned, accurate and application-ready', () => {
   assert.ok(fs.existsSync(cvPath), 'CV source must be checked into the portfolio repository')
   const cv = JSON.parse(fs.readFileSync(cvPath, 'utf8'))
   assert.equal(cv.name, 'Dismas Muriuki Mutabari')
-  assert.match(cv.education, /expected graduation 2027/i)
+  assert.match(cv.education, /Studies completed; degree award expected in 2027/i)
   assert.equal(cv.email, 'muriukidismas9@gmail.com')
   assert.deepEqual(cv.projects.map(p => p.id), ['dmr-x', 'mote', 'voting', 'chimera'])
   assert.doesNotMatch(JSON.stringify(cv), /production-grade|Lead Engineer|57\+|244\+/)

@@ -4,22 +4,23 @@ import ContactForm from '@/components/ContactForm'
 export const metadata: Metadata = {
   title: 'Contact',
   description:
-    'Talk to Dismas Muriuki about software work, frontend projects and open-source collaboration.',
+    'Contact Dismas Muriuki Mutabari about full-time remote software roles, web applications and developer tools.',
 }
 
 export default function ContactPage() {
   return (
     <div className="site-width inner-page">
       <header className="page-header">
-        <p className="eyebrow">CONTACT / OPEN TO REMOTE WORK</p>
+        <p className="eyebrow">CONTACT / AVAILABLE FULL-TIME, REMOTELY</p>
         <h1>
           Tell me what
           <br />
           you’re building.
         </h1>
         <p className="copy">
-          A software problem, a frontend project, or a developer tool you want
-          to work on together. A little context is enough to start.
+          If you’re hiring for a full-time remote software role, tell me about
+          the team and the work. I’m also open to developer-tool and open-source
+          collaborations.
         </p>
       </header>
       <div className="narrative-grid">
@@ -53,10 +54,21 @@ export default function ContactPage() {
             </p>
           </section>
           <section className="story-section">
+            <h2>Connect on LinkedIn</h2>
+            <a
+              href="https://www.linkedin.com/in/dismas-muriuki-b970b91b7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-link"
+            >
+              Dismas Muriuki Mutabari on LinkedIn ↗
+            </a>
+          </section>
+          <section className="story-section">
             <h2>Location</h2>
             <p className="copy">
-              Kenya · East Africa Time (UTC+3). Open to remote software,
-              frontend and design-to-code work.
+              Kenya · East Africa Time (UTC+3). Available full-time for remote
+              software work, with flexibility across time zones.
             </p>
           </section>
         </div>

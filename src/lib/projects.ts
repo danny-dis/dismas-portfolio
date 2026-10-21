@@ -114,6 +114,14 @@ export const projects: Project[] = [
       'Local persistence and model-call/resource budgets',
     ],
     sourceUrl: 'https://github.com/danny-dis/Drift/blob/main/drift/ui_api.py',
+    preview: {
+      src: '/projects/drift-research-empty-composer.png',
+      alt: 'Drift research screen with navigation tabs, collapsed connection settings and an empty question field. AI status is not checked.',
+      width: 1440,
+      height: 837,
+      caption:
+        'Drift’s research screen with an empty question composer. Local interface preview; no model run is shown.',
+    },
     provenance: 'Independent project · local-first application',
     story: {
       problem:
