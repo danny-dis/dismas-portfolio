@@ -22,9 +22,9 @@ export default function Hero() {
             <span>around them.</span>
           </h1>
           <p className="hero-intro">
-            I’m Dismas, a developer in Kenya. My work ranges from model routing
-            to coding-agent workspaces. I like getting into the system
-            underneath, then making it easier to work with.
+            I’m Dismas, a developer in Kenya. I build web applications and AI
+            tools with TypeScript, React and Python. My recent work includes
+            model routing and coding-agent workspaces.
           </p>
           <div className="link-row">
             <a href="#work" className="button button-primary">
@@ -41,7 +41,7 @@ export default function Hero() {
           </div>
           <div className="hero-meta">
             <span>Based in Kenya · UTC+3</span>
-            <span>Open to remote work</span>
+            <span>Available full-time for remote work</span>
           </div>
         </div>
         <aside className="work-index" aria-label="Selected project index">

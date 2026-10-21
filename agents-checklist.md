@@ -1,5 +1,19 @@
 # Agent checklist
 
+## Ishtar — October 21 hiring copy and evidence refresh
+
+- [x] Checked in on clean `main` matching `origin/main`; created `fix/portfolio-hiring-refresh`.
+- [x] Recorded humanized-copy plan and confirmed facts. GitNexus upstream impact failed (no portfolio index); later impact/detect calls timed out. Manual source/diff review completed; graph risk remains unknown.
+- [x] Observed four hiring-copy regressions and two preview regressions fail before implementation; the LCP-priority regression also failed before its fix. All 25 current unit tests pass.
+- [x] Corrected homepage/About/metadata, added LinkedIn to Contact/footer/CV, and synchronized PDF/Word/Markdown. PDF visually reviewed: one page/eight links; Word package/content/hyperlinks verified, visual renderer unavailable.
+- [x] Added one genuine privacy-reviewed Drift empty-composer preview with provenance and honest limitations. Other captures were unavailable or unsafe; architecture diagrams remain on detail pages.
+- [x] Tested contact once: production HTTP500, zero exact-reference Gmail matches. No delivery claimed. Private deployment diagnostics unavailable; no credentials, mailbox storage or billing changed.
+- [x] Final typecheck and 25 tests pass. Twenty actual-browser layout/axe cases pass at 320/768/1024/1440px with no page errors, console warnings/errors or failed requests; settled mobile menu/skip-link recheck passes. Independent copy/CV review has no blockers; parent reviewed preview integration. Final local lint timed out on the older installed dependency tree; exact-lock CI lint/build remain mandatory release gates.
+- [ ] Publish through a reviewed PR with current green CI/deployment checks; verify public pages and exact CV asset bytes after merging.
+- [ ] Check out with exact release, receipts and any remaining limitations recorded.
+
+Scope: portfolio copy, CV sources/downloads, truthful project evidence and contact-delivery verification. No fabricated benchmarks, invented employment, public phone-number addition, private video publication, secret exposure, mailbox deletion, unrelated repository edits or design replacement. Existing historical entries below are retained as historical records.
+
 ## Ishtar — October 12 CV publication
 
 - [x] Checked in; main working tree clean. Scope: CV source, generator, regression coverage, evidence and downloadable assets only; preserve site design and unrelated work.

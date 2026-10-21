@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { Project } from '@/types'
 import ProjectDiagram from './ProjectDiagram'
+import ProjectPreview from './ProjectPreview'
 
 interface ProjectCardProps {
   project: Project
@@ -44,7 +45,12 @@ export default function ProjectCard({
         </div>
         <p className="project-origin">{project.provenance}</p>
       </div>
-      {featured && <ProjectDiagram id={project.id} />}
+      {featured &&
+        (project.preview ? (
+          <ProjectPreview preview={project.preview} />
+        ) : (
+          <ProjectDiagram id={project.id} />
+        ))}
     </article>
   )
 }

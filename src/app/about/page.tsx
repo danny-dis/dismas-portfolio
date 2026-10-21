@@ -5,7 +5,7 @@ import { ArrowUpRight } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'Dismas Muriuki Mutabari, a software builder in Kenya studying computer science and building AI tools and interfaces.',
+    'Dismas Muriuki Mutabari, a software developer in Kenya building web applications and AI tools. Available for full-time remote work.',
 }
 
 export default function AboutPage() {
@@ -57,8 +57,8 @@ export default function AboutPage() {
           <section className="story-section">
             <h2>Education</h2>
             <p className="copy">
-              BSc Computer Science at Murang’a University of Technology, with
-              expected graduation 2027.
+              I’ve completed my computer science studies at Murang’a
+              University of Technology. My BSc award is expected in 2027.
             </p>
           </section>
           <section className="story-section">
@@ -72,9 +72,9 @@ export default function AboutPage() {
           <section className="story-section">
             <h2>Work together</h2>
             <p className="copy">
-              I’m open to remote software and frontend opportunities,
-              design-to-code work and open-source collaboration. I’m based in
-              Kenya, UTC+3.
+              I’m available for full-time remote software roles and open-source
+              collaboration. Based in Kenya (UTC+3), I can adjust my hours to
+              work with your team.
             </p>
             <div className="link-row mt-6">
               <Link href="/contact" className="button button-primary">

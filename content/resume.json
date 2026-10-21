@@ -2,10 +2,11 @@
   "name": "Dismas Muriuki Mutabari",
   "title": "Software Developer | AI Infrastructure & Full-Stack Projects",
   "email": "muriukidismas9@gmail.com",
-  "location": "Kenya | EAT (UTC+3) | Open to remote opportunities",
+  "location": "Kenya | EAT (UTC+3) | Available for full-time remote work",
   "github": "https://github.com/danny-dis",
+  "linkedin": "https://www.linkedin.com/in/dismas-muriuki-b970b91b7",
   "portfolio": "https://dismas-portfolio.vercel.app",
-  "summary": "Computer Science undergraduate and self-directed developer working on AI gateways, agent runtimes and web applications. Project experience spans TypeScript, Python, Rust and Solidity, with a focus on modular architecture, API integration and developer tooling. Seeking junior software development opportunities.",
+  "summary": "Software developer in Kenya building web applications and AI tools. Independent projects use TypeScript, React, Python and Rust, with work on APIs, model routing and agent execution. Available for full-time remote software development roles.",
   "skills": [
     {
       "label": "Languages",
@@ -81,7 +82,7 @@
       ]
     }
   ],
-  "education": "BSc Computer Science (in progress) — Murang'a University of Technology; expected graduation 2027.",
+  "education": "BSc Computer Science — Murang'a University of Technology. Studies completed; degree award expected in 2027.",
   "educationAdditional": "Nkubu High School | 2016–April 2021 | KCSE: B (plain)",
-  "additional": "Open to remote junior software development roles. Based in Kenya (EAT / UTC+3)."
+  "additional": "Available for full-time remote software development roles. Based in Kenya (EAT / UTC+3), with flexibility across time zones."
 }

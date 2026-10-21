@@ -54,9 +54,8 @@ export default function HomePage() {
               work.
             </p>
             <p>
-              Today I’m studying computer science at Murang’a University of
-              Technology, with expected graduation 2027. Alongside that, I build
-              my own tools and work on the design of their interfaces.
+              I’ve completed my computer science studies at Murang’a
+              University of Technology. My BSc award is expected in 2027.
             </p>
             <div className="toolkit">
               <div>
@@ -87,9 +86,9 @@ export default function HomePage() {
               working on?
             </h2>
             <p className="copy">
-              I’m open to remote software and frontend work, and to
-              collaborating on developer tools. Send me the problem, the repo,
-              or a rough idea.
+              I’m available for full-time remote software work. If you’re
+              hiring, tell me about the team and what you need help building.
+              I’m also open to collaborating on developer tools.
             </p>
           </div>
           <div className="link-row">

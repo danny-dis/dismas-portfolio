@@ -69,7 +69,12 @@ test('every featured project explains the problem, decision and scope', () => {
       project,
       featured: true,
     })
-    assert.match(html, /Architecture sketch/)
+    if (project.preview) {
+      assert.ok(html.includes(project.preview.alt))
+      assert.match(html, /Local interface preview/)
+    } else {
+      assert.match(html, /Architecture sketch/)
+    }
     assert.ok(html.includes(project.githubUrl))
     assert.ok(html.includes(`/projects/${project.id}`))
     assert.match(html, /Independent project/)

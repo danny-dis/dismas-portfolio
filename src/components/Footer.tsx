@@ -20,6 +20,13 @@ export default function Footer() {
           >
             GitHub ↗
           </a>
+          <a
+            href="https://www.linkedin.com/in/dismas-muriuki-b970b91b7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
           <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
             CV ↗
           </a>

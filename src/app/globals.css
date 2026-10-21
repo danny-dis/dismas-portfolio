@@ -404,6 +404,24 @@ p {
   border-top: 1px solid #4c6363;
   padding-top: 1rem;
 }
+.project-preview {
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: var(--ink);
+}
+.project-preview a,
+.project-preview img {
+  display: block;
+}
+.project-preview img {
+  width: 100%;
+  height: auto;
+}
+.project-preview figcaption {
+  padding: 1rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1.15fr;

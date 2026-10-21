@@ -2,14 +2,15 @@
 
 **Software Developer | AI Infrastructure & Full-Stack Projects**
 
-Kenya | EAT (UTC+3) | Open to remote opportunities
+Kenya | EAT (UTC+3) | Available for full-time remote work
 
 muriukidismas9@gmail.com
 https://github.com/danny-dis | https://dismas-portfolio.vercel.app
+https://www.linkedin.com/in/dismas-muriuki-b970b91b7
 
 ## Summary
 
-Computer Science undergraduate and self-directed developer working on AI gateways, agent runtimes and web applications. Project experience spans TypeScript, Python, Rust and Solidity, with a focus on modular architecture, API integration and developer tooling. Seeking junior software development opportunities.
+Software developer in Kenya building web applications and AI tools. Independent projects use TypeScript, React, Python and Rust, with work on APIs, model routing and agent execution. Available for full-time remote software development roles.
 
 ## Technical Skills
 
@@ -57,5 +58,5 @@ June–August 2024 | Nairobi, Kenya
 
 ## Education
 
-BSc Computer Science (in progress) — Murang'a University of Technology | Expected graduation: 2027
+BSc Computer Science — Murang'a University of Technology. Studies completed; degree award expected in 2027.
 Nkubu High School | 2016–April 2021 | KCSE: B (plain)

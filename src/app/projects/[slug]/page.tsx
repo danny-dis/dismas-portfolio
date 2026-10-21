@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { getProjectBySlug, projects } from '@/lib/projects'
 import ProjectDiagram from '@/components/ProjectDiagram'
+import ProjectPreview from '@/components/ProjectPreview'
 
 interface ProjectPageProps {
   params: { slug: string }
@@ -52,6 +53,12 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           )}
         </div>
       </header>
+      {project.preview && (
+        <section className="story-section mb-8" aria-labelledby="preview-heading">
+          <h2 id="preview-heading">Inside the interface</h2>
+          <ProjectPreview preview={project.preview} priority />
+        </section>
+      )}
       <div className="narrative-grid">
         <div>
           {project.story ? (
